@@ -6,6 +6,28 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+
+
+#Add factory girl
+gem 'factory_girl_rails'
+
+group :development, :test do
+# TESTING rspec
+  gem 'rspec-rails'
+
+  gem 'pry-byebug'
+
+# TESTING shoulds tools
+  gem 'shoulda-matchers', require: false
+end
+
+group :production do
+  #gem for heroku to handle assets
+  gem 'rails_12factor', '0.0.2'
+end
+
+gem "paperclip", "~> 4.2"
+gem "paperclip-ffmpeg"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -17,16 +39,16 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'bcrypt', '~> 3.1.7'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem 'aws-sdk', '~> 1.20.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

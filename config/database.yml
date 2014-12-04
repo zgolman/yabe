@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: yabe_development
   pool: 5
-  username: yabe
-  password:
+  username: rails
+  password: rails
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: yabe_test
   pool: 5
-  username: yabe
+  username: 
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: yabe_production
   pool: 5
-  username: yabe
+  username: 
   password:
