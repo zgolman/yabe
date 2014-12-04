@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <head>
+  <head>
+  <script src='https://platform.venmo.com/sdk.js'></script>
 </head>
+
 <body>
+  <a class="venmo-pay-button" data-recipient-id="1397129314566144218" />
+  <iframe style="width: 120px; height: 33px" scrolling="no" frameborder="0" src="//platform.venmo.com/#payment-widget?recipient_id=1397129314566144218"></iframe>
   <%= yield %>
 </body>
 </html>
