@@ -6,6 +6,7 @@ Yabe::Application.routes.draw do
 
   resources :sessions
   resources :users
+  resources :charges
 
   root 'users#index'
   
