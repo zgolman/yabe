@@ -11,8 +11,31 @@ class ChargesController < ApplicationController
    # raise @charges.inspect
     @charges = @charges["data"]
     # raise test.inspect
+  end
 
-    
+
+  def get_access_token_from_code(auth_code)
+    client_secret = ENV["CLIENT_SECRET"]
+    client_id = ENV["CLIENT_ID"]
+      response = HTTParty.post("https://api.venmo.com/v1/oauth/access_token",
+      :query => { :client_id => "#{client_id}", :client_secret => "#{client_secret}",
+      :code => "#{auth_code}"})
+  return response
+  end
+
+
+
+  def bill_dashboard
+    @user = current_user
+    if params["code"] && !@user.venmo_registered
+      @user.update_attribute('auth_code', params["code"])
+
+      response = get_access_token_from_code(params["code"])
+      auth_token = response['access_token']
+      user_id = response['user']['id']
+      @user.update_attribute('auth_token', auth_token)
+      @user.update_attribute('venmo_registered', true)
+      @user.update_attribute('venmo_id', user_id)
 
    #  q_string1 = "https://api.venmo.com/v1/payments?access_token="
    #  t_string = '"JkNBB2yELzx93pWjnsXhqnS6raYeXvb8"'
@@ -20,6 +43,7 @@ class ChargesController < ApplicationController
    #  uri = HTTParty.get a_string
    
    # @charges = JSON.parse(uri.body)
+    end 
   end
     
    def show
@@ -31,9 +55,9 @@ class ChargesController < ApplicationController
   def create
   end
 
-
-
-
 end
+
+
+
 
   
