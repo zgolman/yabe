@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+    
+    skip_before_filter :authorize
+
     def index
-        @users = User.new
+        @users = User.all
     end
 
     def new
@@ -22,3 +25,5 @@ class UsersController < ApplicationController
         params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end
+
+

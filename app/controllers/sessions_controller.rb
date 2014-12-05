@@ -1,8 +1,11 @@
 class SessionsController < ApplicationController
-    def new
-    end
+      # skip_before_filter :authorize
 
-    def create
+
+      def new
+      end
+
+      def create
         user = User.where(email: params[:email]).first
         # first make sure we actually find a user
         # then see if user authenticates
@@ -15,11 +18,16 @@ class SessionsController < ApplicationController
             render "new"
             # redirect_to new_session_path
         end
-    end
+      end
 
-    def destroy
+
+      def show
+
+      end
+
+      def destroy
         # Kill our cookies!
         reset_session
         redirect_to root_path, notice: "Logged out!"
-    end
-end
+      end
+end 
