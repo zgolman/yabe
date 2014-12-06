@@ -8,6 +8,6 @@ Yabe::Application.routes.draw do
   resources :charges
   resources :photos
 
-  root 'users#new'
+  root 'users#index'
   
 end
