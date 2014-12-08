@@ -4,27 +4,43 @@
   <title>Yabe</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-      <div id="container">
+  <div id="container">
         <div id="user_header">
           <% if current_user %>
             Logged in as <%= current_user.email %>.
             <%= link_to "Log Out", logout_path %>
           <% else %>
-            <%= link_to "Sign Up", signup_path %> or
+            <div class="credentials">
+            <%= link_to "Sign Up", signup_path %> | 
             <%= link_to "Log In", login_path %>
           <% end %>
         </div>
+          </div>
         <% flash.each do |name,msg| %>
           <%= content_tag :div, msg, id: "flash_#{name}" %>
         <% end %>
     
         <%= yield %>
-      </div>
+  <nav class="clearfix">  
+    <ul class="clearfix"> 
+        <div class="yabe"> 
+        <li><a href="#">Yabe</a></li>  
+        </div>
+        <li><a href="#">How It Works</a></li>  
+        <li><a href="#">Current Listings</a></li>  
+        <li><a href="#">Dashboard</a></li>    
+    </ul>  
+    <a href="#" id="pull">Menu</a>  
+</nav> 
+
+ 
+      
 
 </body>
 </html>

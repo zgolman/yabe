@@ -10,6 +10,8 @@ gem 'httparty'
 
 gem 'font-awesome-rails', '~> 4.2.0.0'
 
+gem 'better_errors', '~> 2.0.0'
+
 #Add factory girl
 gem 'factory_girl_rails'
 
