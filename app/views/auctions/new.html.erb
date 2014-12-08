@@ -1,15 +1,37 @@
-   <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <div class="actions"><%= f.submit "Sign Up" %></div>
-  <% end %>
 
+
+
+<%= form_for @auction do |f| %>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :auction_start %>
+    <%= f.date_field :auction_start %>
+  </div>  
+  <div class="field">
+    <%= f.label :auction_end %>
+    <%= f.date_field :auction_end %>
+   </div>
+ <div class="field">
+    <%= f.label :category%> (select your risk)
+   <div id="investment"> 
+   <%= f.radio_button(:category, "Sporting Goods") %>
+   <%= f.label(:category, "Sporting Goods") %>
+   <%= f.radio_button(:category, "Fashion") %>
+   <%= f.label(:category, "Fashion") %>
+   <%= f.radio_button(:category, "Collectibles") %>
+   <%= f.label(:category, "Collectibles") %>
+   <%= f.radio_button(:category, "Home & Garden") %>
+   <%= f.label(:category, "Home & Garden") %>
+   <%= f.radio_button(:category, "Suprise Me") %>
+   <%= f.label(:category, "Surpise Me") %>
+   </div>
+ </div> 
+
+
+  <div class="actions"><%= f.submit "Submit" %></div>
+<% end %>
+</div>
