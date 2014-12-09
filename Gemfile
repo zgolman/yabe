@@ -13,6 +13,8 @@ gem 'font-awesome-rails', '~> 4.2.0.0'
 #Add factory girl
 gem 'factory_girl_rails'
 
+
+
 group :development, :test do
 # TESTING rspec
   gem 'rspec-rails'
@@ -27,7 +29,7 @@ group :production do
   #gem for heroku to handle assets
   gem 'rails_12factor', '0.0.2'
 end
-
+gem 'therubyracer'
 gem "paperclip", "~> 4.2"
 gem "paperclip-ffmpeg"
 # Use SCSS for stylesheets
