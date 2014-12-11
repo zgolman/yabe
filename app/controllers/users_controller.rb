@@ -21,10 +21,14 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to root_url, notice: "Thank you for signing up!"
+            redirect_to option_path, notice: "Thank you for signing up!"
         else
             render "home"
         end
+    end
+
+    def option
+        
     end
 
     private

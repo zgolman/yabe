@@ -1,0 +1,94 @@
+
+
+<script src='/assets/auctions.js'></script>
+<br>
+<br>
+
+
+<br>
+<strong>Amount:</strong> $<%= @auction.amount %><br>
+<strong>Category:</strong> <%= @auction.category %><br>
+
+
+<strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</di
+<script type="text/javascript">
+ var sTime = new Date().getTime();
+    var countDown = <%= @auction.auction_period%>; // Number of seconds to count down from.        
+    var eTime = sTime+(countDown * 1000);
+    console.log(eTime)
+
+
+
+    function UpdateCountDownTime() {
+        var cTime = new Date().getTime();
+        var diff = cTime - sTime;
+        var timeStr = '';
+        var seconds = countDown - Math.floor(diff / 1000);
+        if (seconds >= 0) {
+            var hours = Math.floor(seconds / 3600);
+            var minutes = Math.floor( (seconds-(hours*3600)) / 60);
+            seconds -= (hours*3600) + (minutes*60);
+            if( hours < 10 ){
+                timeStr = "0" + hours;
+            }else{
+                timeStr = hours;
+            }
+            if( minutes < 10 ){
+                timeStr = timeStr + ":0" + minutes;
+            }else{
+                timeStr = timeStr + ":" + minutes;
+            }
+            if( seconds < 10){
+                timeStr = timeStr + ":0" + seconds;
+            }else{
+                timeStr = timeStr + ":" + seconds;
+            }
+            document.getElementById("countdowntimertxt").innerHTML = timeStr;
+        }else{
+            document.getElementById("countdowntimertxt").style.display="none";
+            clearInterval(counter);
+        }
+    }
+    UpdateCountDownTime();
+    var counter = setInterval(UpdateCountDownTime, 500);
+
+    // document.cookie = countDown;
+    // 200 seconds countdown
+		
+
+		//current timestamp
+		var now   = Date.parse(new Date());
+
+		//ready should be stored in your cookie
+		var ready = Date.parse(new Date (now + countDown  * 1000)); // * 1000 to get ms
+
+
+		//every 1000 ms
+		setInterval(function()
+		{
+		    var sec = ( ready - Date.parse(new Date()) )/1000;
+		    document.cookie = sec + " seconds left";
+
+		},1000);
+
+
+
+
+</script>
+<!-- // var myVar=setInterval(function(){myTimer()},1000);
+
+// function myTimer() {
+//     var d = new Date();
+//     document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+// }
+
+// var auction = $('#timer').data('auction')
+// 	console.log(auction)
+
+// var myCountdown1 = new Countdown({time:auction});
+
+// function myTimer() {
+//     var d = new Date();
+//     document.getElementById("timer").innerHTML = myCount;
+// }
+ -->

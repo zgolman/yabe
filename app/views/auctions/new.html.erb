@@ -1,0 +1,36 @@
+
+
+<% key=[['1 day', 24.hours], ['5 min', 5.minutes], ['30 min', 30.minutes], ['1 hour', 1.hours], ['12 hours', 12.hours], ['2 days', 48.hours], ['5 days', 120.hours], ['7 days', 168.hours]] %>
+
+<%= form_for @auction do |f| %>
+
+  <div class="field">
+    <%= f.label :amount %>
+    $<%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :auction_period %>
+    <%= f.select(:auction_period, options_for_select(key)) %>
+  </div>  
+ <div class="field">
+    <%= f.label :category%> 
+   <div id="investment"> 
+   <%= f.radio_button(:category, "Sporting Goods") %>
+   <%= f.label(:category, "Sporting Goods") %>
+   <%= f.radio_button(:category, "Fashion") %>
+   <%= f.label(:category, "Fashion") %>
+   <%= f.radio_button(:category, "Collectibles") %>
+   <%= f.label(:category, "Collectibles") %>
+   <%= f.radio_button(:category, "Home & Garden") %>
+   <%= f.label(:category, "Home & Garden") %>
+   <%= f.radio_button(:category, "Suprise Me") %>
+   <%= f.label(:category, "Surpise Me") %>
+   </div>
+ </div> 
+
+
+
+  <div class="actions"><%= f.submit "Submit" %></div>
+<% end %>
+</div>
+
