@@ -1,0 +1,1 @@
+$('yabe').addClass('animated hinge');
