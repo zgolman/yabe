@@ -4,11 +4,18 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all
-    end
-
-    def new
         @user = User.new
     end
+
+    # def new
+    #     @user = User.new
+    # end
+
+    def home
+        @user = User.new
+    end
+
+
 
     def create
         @user = User.new(user_params)
@@ -16,7 +23,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to option_path, notice: "Thank you for signing up!"
         else
-            render "new"
+            render "home"
         end
     end
 

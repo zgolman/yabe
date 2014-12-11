@@ -1,7 +1,8 @@
- <!-- Below is basic signup -->
-  <h1>Sign Up</h1>
-  
-  <%= form_for @user do |f| %>
+<h1>Sign Up!</h1>
+  <%=check_user%>
+  <%=mylabel%>
+  <% if (check_user == nil) || (check_user.blank?) %>
+  <% form_for @user do |f| %>
     <% if @user.errors.any? %>
       <div class="error_messages">
         <h2>Form is invalid</h2>
@@ -12,7 +13,8 @@
         </ul>
       </div>
     <% end %>
-  
+    <% end %>
+
     <div class="field">
       <%= f.label :email %><br />
       <%= f.text_field :email %>
@@ -25,6 +27,6 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation %>
     </div>
-    <div class="actions"><%= f.submit "Sign Up" %></div>
-  <% end %>
 
+    <div class="actions"><%= f.submit "Sign Up" %></div>
+    <% end %>
