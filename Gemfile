@@ -8,6 +8,8 @@ gem 'pg'
 
 gem 'httparty'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem 'font-awesome-rails', '~> 4.2.0.0'
 
 gem 'better_errors', '~> 2.0.0'
