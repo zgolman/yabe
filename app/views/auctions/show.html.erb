@@ -1,15 +1,24 @@
+
+
+<script src='/assets/auctions.js'></script>
 <br>
 <br>
 
+
+<br>
 <strong>Amount:</strong> $<%= @auction.amount %><br>
 <strong>Category:</strong> <%= @auction.category %><br>
 
 
 <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
 
-    <script type="text/javascript">
-    var sTime = new Date().getTime();
+<script type="text/javascript">
+ var sTime = new Date().getTime();
     var countDown = <%= @auction.auction_period%>; // Number of seconds to count down from.        
+    var eTime = sTime+(countDown * 1000);
+    console.log(eTime)
+
+
 
     function UpdateCountDownTime() {
         var cTime = new Date().getTime();
@@ -43,6 +52,29 @@
     }
     UpdateCountDownTime();
     var counter = setInterval(UpdateCountDownTime, 500);
+
+    // document.cookie = countDown;
+    // 200 seconds countdown
+		
+
+		//current timestamp
+		var now   = Date.parse(new Date());
+
+		//ready should be stored in your cookie
+		var ready = Date.parse(new Date (now + countDown  * 1000)); // * 1000 to get ms
+
+
+		//every 1000 ms
+		setInterval(function()
+		{
+		    var sec = ( ready - Date.parse(new Date()) )/1000;
+		    document.cookie = sec + " seconds left";
+
+		},1000);
+
+
+
+
 </script>
 <!-- // var myVar=setInterval(function(){myTimer()},1000);
 
