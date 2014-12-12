@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-  <form action="" method="POST">
+  <%= form_tag charges_path do %>
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_3VnrXFBGIR0MGiKoT0A6iDP8"
@@ -12,7 +12,7 @@
     data-description="2 widgets ($20.00)"
     data-image="'https://localhost:3000/128x128.png">
   </script>
-</form>
+  <% end %>
   <%= yield %>
 </body>
 </html>

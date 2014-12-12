@@ -1,1 +1,1 @@
-$('yabe').addClass('animated hinge');
+$(".slogan").letterfx({"fx":"swirl"});
