@@ -8,6 +8,8 @@
             <strong>Amount:</strong> $<%= j.amount %><br>
             <strong>Category:</strong> <%= j.category %><br>
             <strong>Time Remaining:</strong> $<%= j.amount %><br>
+            <%= link_to "View this Auction!", auction_path(j) %><br>
+            <%= link_to "Bid on this!", new_photo_path(j) %>
 
               <br>
            <% end %>    

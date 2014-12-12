@@ -29,7 +29,7 @@
         <%= content_tag :div, msg, id: "flash_#{name}" %>
         <% end %>
 
-        <%= yield %>
+        
     </div>
 <div class="yabe">
   <div class="y">y</div>
@@ -44,7 +44,7 @@
      <a class="navigation-item" href="#">Home</a>
      <a class="navigation-item" href="#">Dashboard</a>
      <a class="navigation-item" href="#">Account</a>
-     <a class="navigation-item" href="#">Listings</a>
+     <a class="navigation-item" href=""><%= link_to "Listings", auctions_path %></a>
      <a class="navigation-item" class="how-it-works" data-toggle="modal" data-target="#myModal">
      <a class="navigation-item" href="#">How It Works</a>
   </div>
@@ -58,7 +58,7 @@
   <div class="col-xs-3"></div>
 </div>
 
-
+<%= yield %>
 
 
 <h2 class="slogan">A reversal <br> of fortune</h2>
@@ -85,6 +85,6 @@
   </div>
 </div>   
 
-  
+  <%= yield %>
 </body>
 </html>
