@@ -11,7 +11,7 @@
       # @photo.date ||= DateTime.now
       # Attach this criterion to a decision
       if @photo.save
-        redirect_to users_path
+        redirect_to auction_path
       else
         render 'new'
       end

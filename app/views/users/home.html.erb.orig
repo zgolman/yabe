@@ -1,4 +1,12 @@
 
+ <!-- Below is basic signup -->
+<<<<<<< HEAD
+  
+=======
+
+>>>>>>> 893bad5da3357e9dadb72ced8bdd3aa69e86e345
+  
+
   <% if (current_user == nil) %>
 
   <%= form_for @user do |f| %>

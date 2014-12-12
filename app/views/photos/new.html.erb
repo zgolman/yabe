@@ -1,4 +1,23 @@
 <%= form_for @photo do |f| %>
-    <%= f.file_field :image %>
-    <%= f.submit %>
+    <div>
+	<p class="lead">Name of Product</p>
+	<%= f.text_area :name, class: "form-control" %>
+	</div><br>
+
+    <div>
+	<p class="lead">Upload your Product<p>
+    <%= f.file_field :image, class: "form-control" %>
+	</div>
+
+	<div>
+	<p class="lead">Describe The Video</p>
+	<%= f.text_area :description, class: "form-control" %>
+	</div><br>
+
+	<div><%= submit_tag("Upload Item", class: "btn btn-danger") %></div>
+	<br>
+
 <% end %>
+
+      
+

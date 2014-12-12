@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211013724) do
+ActiveRecord::Schema.define(version: 20141211034231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 20141211013724) do
   end
 
   add_index "auctions", ["user_id"], name: "index_user_id", using: :btree
+
+  create_table "categories", force: true do |t|
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "charges", force: true do |t|
     t.string   "stripeToken"
