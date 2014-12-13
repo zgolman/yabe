@@ -21,8 +21,6 @@
 body {
   font-family: AvenirLTStd-Medium, "Helvetica", sans-serif;
   background-color: white;
-  height: auto;
-  width: 100%;
 
 }
 
@@ -51,63 +49,62 @@ body {
   font-size: 60px;
   color: green;
   float: left;
-}
-
-
-.yabe {
-  position: fixed;
-  display: inline-block;
   z-index: 50;
-  vertical-align: middle;
-  margin-left: 30px;
-  margin-top: -10px;
-
 }
 
+.nav-bar {
+  float: right;
+  height: 30px;
+}
+
+.container-fluid {
+  background-color: white;
+  height: 30px;
+}
 
 .login-button {
   float: right;
-  border-radius: 5px;
   margin-right: 40px;
-  background-color: red;
-  margin-top: 35px;
+  margin-top: 10px;
   width: 90px;
   border: none;
   size: 20px;
   color: white;
+  border-color: red;
 
 }
 
-.navigation-item  {
-  display: inline-block;
+.login a {
+  color: white;
+}
+
+.open-modal {
+  float: right;
+  margin-right: 40px;
+  margin-top: 10px;
+  width: 90px;
+  border: none;
+  size: 20px;
   color: black;
-  margin-left: 15px;
-  margin-top: 30px;
+  text-align: center;
+}
+
+.open-modal:hover a {
+  color: white;
+}
+
+li {
+  color: white;
+  display: inline;
   font-size: 20px;
-  z-index: 50;
-  
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
-#mymodal {
-  height: 500px;
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.navigation-item:hover {
-  background-color: yellow;
-  border-radius: 70px;
-
-  
-}
-
-.row {
-  // background-color: white;
-  height: 40px;
- 
-}
-
+li:hover {
+} 
 
 .slogan{
   margin-top: 200px;
@@ -118,19 +115,66 @@ body {
 
 }
 
-.logged-in {
-  margin-left: 1050px;
-  color: black;
-}
+
 
 .stripe-button {
   margin-top: 500px;
 }
 
 
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  color: black;
+  text-align: center;
+}
 
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
 
+.modalDialog > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+}
 
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
 
-
+.close:hover { background: #00d9ff; }
 

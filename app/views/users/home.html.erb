@@ -1,5 +1,11 @@
+<div class="open-modal">
+<a href="#openModal">Sign Up</a>
+</div>
 
-  <% if (current_user == nil) %>
+<div id="openModal" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close"></a>
+    <p><% if (current_user == nil) %>
 
   <%= form_for @user do |f| %>
   <div class="signup-logo">
@@ -36,3 +42,8 @@
 
    
 
+</p>
+  </div>
+  
+</div>
+  
