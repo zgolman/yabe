@@ -13,14 +13,15 @@ class AuctionsController < ApplicationController
     
   	@auction = Auction.new(auction_params)
     @auction.user_id = @user.id
-  	
+  
+
     respond_to do |format|
 
     if @auction.save
             Auction.create(:user_id => @user.id)
 
             session[:user_id] = @user.id
-            format.html { redirect_to @auction, notice: 'User was successfully created.' }
+            format.html { redirect_to @auction, notice: 'Auction successfully created.' }
             format.json { render action: 'show', status: :created, location: @auction }
           else
             format.html { render action: 'new' }
@@ -29,13 +30,19 @@ class AuctionsController < ApplicationController
     end
 end
 
+  def addPhoto
+  @auction = Auction.find(params[:id])
 
+  @auction << Photo.new(photo_params)
+
+  @auction.save
+  end
    #  if @auction.save
   	# 	redirect_to auctions_path
   	# else
   	# 	render 'new'
   	# end
-  # end
+  #end
 
   def show
     @auction = Auction.find(params[:id])
@@ -68,6 +75,9 @@ end
 private
     # Never trust parameters from the scary internet, only allow the white list through.
   	def auction_params
-      params.require(:auction).permit(:amount, :auction_period, :category, :user_id)
+      params.require(:auction).permit(:amount, :auction_period, :category, :user_id, :photo_id)
   	end
+    def photo_params
+       params.require(:photo).permit(:name, :image, :description) 
+    end
 end

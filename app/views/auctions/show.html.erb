@@ -1,8 +1,6 @@
 
 
-<script src='/assets/auctions.js'></script>
-<br>
-<br>
+
 
 
 <br>
@@ -15,20 +13,38 @@
 <br>
 <br>
 
-<% @photos.each do |f| %>
-    <div class="thumbs">
-     <div>
-    <p class="lead">Upload your Product<p>
-    <%= f.file_field :image, class: "form-control" %>
+
+        <h1>Add A Product</h1>
+    
+        <div>
+              <%= form_for Photo.new, :url => {:action => :create} do |f| %>
+
+
+
+                <div>
+                    Name: <%= f.text_area :name, class: "form-control" %>
+                </div><br>
+                <div>
+                    Upload Image: <%= f.file_field :image, class: "form-control" %>
+                </div><br>
+                <div>
+                    Description: <%= f.text_area :description, class: "form-control" %>
+                </div><br>
+            
+                <div><%= submit_tag("Post New Joke", class: "btn btn-danger") %></div>
+                <br>
+            <% end %> 
+        </div>
     </div>
-    </div>
+
+
 
 <script type="text/javascript">
  var sTime = new Date().getTime();
-    var countDown = <%= @auction.auction_period%>; // Number of seconds to count down from.        
-    var eTime = sTime+(countDown * 1000);
-    console.log(eTime)
-
+    var countDown = 3700; // Number of seconds to count down from.        
+    // var eTime = sTime+(countDown * 1000);
+    // console.log(eTime)
+ 
 
 
     function UpdateCountDownTime() {
@@ -61,32 +77,14 @@
             clearInterval(counter);
         }
     }
+
     UpdateCountDownTime();
     var counter = setInterval(UpdateCountDownTime, 500);
 
-    // document.cookie = countDown;
-    // 200 seconds countdown
-        
-
-        //current timestamp
-        var now   = Date.parse(new Date());
-
-        //ready should be stored in your cookie
-        var ready = Date.parse(new Date (now + countDown  * 1000)); // * 1000 to get ms
 
 
-        //every 1000 ms
-        setInterval(function()
-        {
-            var sec = ( ready - Date.parse(new Date()) )/1000;
-            document.cookie = sec + " seconds left";
-
-        },1000);
+</script>
 
 
 
 
-
-
-
- </script>
