@@ -34,14 +34,14 @@ ActiveRecord::Schema.define(version: 20141211034231) do
   end
 
   create_table "charges", force: true do |t|
-    t.string   "stripeToken"
-    t.string   "stripeTokenType"
-    t.string   "stripeEmail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "photos", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
