@@ -2,6 +2,6 @@ class Auction < ActiveRecord::Base
 	belongs_to :user
 	has_many :photos
 
-	accepts_nested_attributes_for :photos
+	# accepts_nested_attributes_for :photos
 
 end

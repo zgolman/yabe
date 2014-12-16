@@ -29,23 +29,23 @@ class AuctionsController < ApplicationController
     end
 end
 
-def addPhoto
-  @auction = Auction.find(params[:id])
+# def addPhoto
+#   @auction = Auction.find(params[:id])
 
-  @auction << Photo.new(photo_params)
+#   @auction << Photo.new(photo_params)
 
-  if @auction.save
-      Photo.create(:user_id => @user.id)
+#   if @auction.save
+#       Photo.create(:user_id => @user.id)
 
-            session[:user_id] = @user.id
-            format.html { redirect_to @auction, notice: 'You bidd on this' }
-            format.json { render action: 'show', status: :created, location: @auction }
-          else
-            format.html { render action: 'new' }
-            format.json { render json: @auction.errors, status: :unprocessable_entity }
-          end
-  end
-end
+#             session[:user_id] = @user.id
+#             format.html { redirect_to @auction, notice: 'You bidd on this' }
+#             format.json { render action: 'show', status: :created, location: @auction }
+#           else
+#             format.html { render action: 'new' }
+#             format.json { render json: @auction.errors, status: :unprocessable_entity }
+#           end
+#   end
+# end
 
 
    #  if @auction.save
@@ -62,12 +62,18 @@ end
     @list = Photo.all 
     
 
-    #  u = User.where(id: @joke.user_id).first
-    # @username = u.username
 
     @photo = Photo.new
-    @auctionphotos = Photo.where(auction_id: @auction.id)
+    @photos = @auction.photos
+    # @auctionPhotos = Photo.where(auction_id: @auction.id)
+    # @photo.save
 
+
+
+
+    
+
+   
   end
 
   def update
@@ -92,6 +98,6 @@ private
     def auction_params
       params.require(:auction).permit(:amount, :auction_period, :category, :user_id)
     end
-   
-
+    
+end
   
