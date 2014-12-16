@@ -1,5 +1,7 @@
 
 
+
+
 <script src='/assets/auctions.js'></script>
 <br>
 <br>
@@ -16,39 +18,16 @@
 <br>
 
 
-<div class = "bid">
-    <div class="open-modal">
-    <button><a href="#openModal">BID NOW</a></button>
-    </div>
-</div>
-    <div id="openModal" class="modalDialog">
-    <div>
-    <a href="#close" title="Close" class="close"></a>
-    <!-- <p><%# if (current_user == nil) %> -->
-        <div>
-              <%= form_for @photo, :url => {:action => :create} do |f| %>
+<%= button_to "Bid Now", addPhoto_path, :method => :get %>
 
-                <div>
-                    Name: <%= f.text_area :name, class: "form-control" %>
-                </div><br>
-                <div>
-                    Upload Image: <%= f.file_field :image, class: "form-control" %>
-                </div><br>
-                <div>
-                    Description: <%= f.text_area :description, class: "form-control" %>
-                </div><br>
-            
-                <div><%= submit_tag("Post New Item", class: "btn btn-danger") %></div>
-                <br>
-            <% end %> 
-        </div>
-    </div>
 
-   <div>
-     $<%= @photo.name %>
-     <%= @photo.id %>
- </div>
-
+            <div id="commentlist"></div>
+                        
+            <% @auctionphotos.order("created_at desc").each do |jc| %>
+                <p class="container">Posted: <%= jc.name =></p>
+                <div id="commentlist"></div>
+            <% end %>
+                        
     
     <script type="text/javascript">
     var sTime = new Date().getTime();
