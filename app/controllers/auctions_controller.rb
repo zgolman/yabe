@@ -39,7 +39,7 @@ end
 
   def show
     @auction = Auction.find(params[:id])
-    
+    @photos = Photo.all
     
 
     # u = User.where(id: @auction.user_id).first
