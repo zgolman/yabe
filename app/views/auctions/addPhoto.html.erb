@@ -1,0 +1,23 @@
+
+
+
+    
+        <div>
+              <%= form_for Photo.new, :url => {:action => :create} do |f| %>
+
+                <div>
+                    Name: <%= f.text_area :name, class: "form-control" %>
+                </div><br>
+                <div>
+                    Upload Image: <%= f.file_field :image, class: "form-control" %>
+                </div><br>
+                <div>
+                    Description: <%= f.text_area :description, class: "form-control" %>
+                </div><br>
+            
+                <div><%= submit_tag("Post New Item", class: "btn btn-danger") %></div>
+                <br>
+            <% end %> 
+        </div>
+    </div>
+

@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20141211034231) do
   end
 
   create_table "photos", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -49,7 +52,10 @@ ActiveRecord::Schema.define(version: 20141211034231) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.integer  "auction_id"
   end
+
+  add_index "photos", ["auction_id"], name: "index_photo_id", using: :btree
 
   create_table "products", force: true do |t|
     t.string   "name"
