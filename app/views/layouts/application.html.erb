@@ -28,14 +28,20 @@
 <body>
 
 <div id="cssmenu">
+  <div class="nav-background">
+</div>
   
 <ul>
   <% if !current_user%>
    <li>
+    <div class="signup">
      <a href="#openModal-1">SIGN UP</a>
+    </div>
    </li>
    <li class="last">
+    <div class="login">
      <a href="#openModal-2">LOGIN</a>
+    </div>
    </li>
    <%end%>
 </ul>

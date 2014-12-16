@@ -23,7 +23,7 @@ body {
   font-family: AvenirLTStd-Medium, "Helvetica", sans-serif;
   background-color: white;
   background-repeat: no-repeat;
-  background-size: 460px;
+  background-size: 500px;
   margin-bottom: 800px;
 
 }
@@ -97,10 +97,13 @@ body {
 }
 
 .logged-in {
-  margin-left: 1150px;
-  margin-top: 20px;
+  margin-left: 900px;
+  margin-top: 10px;
   font-family: 'Open Sans', sans-serif;
-  color: white;
+}
+
+.logged-in a {
+  color: black;
 }
 .signup-logo a {
   margin-top: 10px;
@@ -108,6 +111,16 @@ body {
   color: white;
 }
 
+.logout-link {
+  margin-right: 5px;
+  margin-top: 30px;
+  color: red;
+  margin-top: 5px;
+}
+
+.logout-link a {
+  color: red;
+}
 .cash-button a {
 cursor: pointer;
 background: green;
@@ -178,9 +191,9 @@ font-size: 20px;
 
 .sand-clock {
   background-image: url(http://www.hackathonbd.com/wp-content/uploads/2014/02/18713_miscellaneous_sand_clock.jpg);
-  margin-top: 40px;
+  margin-top: 0;
   width: 100%;
-  height: 550px;
+  height: 900px;
   
 }
 
@@ -288,21 +301,13 @@ font-size: 20px;
 #cssmenu {
 position: fixed;
 top: 0;
-width: 100%;
 color: #ffffff;
-height: 35px;
-text-align: center;
-padding-top: 15px;
-/* Adds shadow to the bottom of the bar */
--webkit-box-shadow: 0px 0px 8px 0px #000000;
--moz-box-shadow: 0px 0px 8px 0px #000000;
-box-shadow: 0px 0px 8px 0px #000000;
-/* Adds the transparent background */
-background-color: rgba(1, 1, 1, 0.8);
+text-align: right;
 color: rgba(1, 1, 1, 0.8);
 }
+
 #cssmenu a {
-font-size: 14px;
+font-size: 17px;
 padding-left: 15px;
 padding-right: 15px;
 color: white;
@@ -313,8 +318,18 @@ text-decoration: none;
 color: grey;
 } 
 
-ul:hover {
-  color: blue;
+.login {
+  margin-right: 100px;
+  margin-top: -40px;
+}
+
+.signup {
+  margin-top: 5px;
+  margin-left: 1100px;
+}
+
+#index_title {
+  text-align: center;
 }
 .carousel {
     margin: 0 auto;
