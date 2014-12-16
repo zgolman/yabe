@@ -29,38 +29,14 @@ class AuctionsController < ApplicationController
     end
 end
 
-# def addPhoto
-#   @auction = Auction.find(params[:id])
 
-#   @auction << Photo.new(photo_params)
-
-#   if @auction.save
-#       Photo.create(:user_id => @user.id)
-
-#             session[:user_id] = @user.id
-#             format.html { redirect_to @auction, notice: 'You bidd on this' }
-#             format.json { render action: 'show', status: :created, location: @auction }
-#           else
-#             format.html { render action: 'new' }
-#             format.json { render json: @auction.errors, status: :unprocessable_entity }
-#           end
-#   end
-# end
-
-
-   #  if @auction.save
-    #   redirect_to auctions_path
-    # else
-    #   render 'new'
-    # end
-  # end
 
   def show
     @auction = Auction.find(params[:id])
   
     @auction.save
     @list = Photo.all 
-    
+    @timeleft = @auction.created_at.to_i - @auction.auction_period.to_i
 
 
     @photo = Photo.new

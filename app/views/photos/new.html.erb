@@ -1,23 +1,36 @@
-<%= form_for @photo do |f| %>
-    <div>
-	<p class="lead">Name of Product</p>
-	<%= f.text_area :name, class: "form-control" %>
-	</div><br>
+<head>
 
-    <div>
-	<p class="lead">Upload your Product<p>
-    <%= f.file_field :image, class: "form-control" %>
-	</div>
+</head>
+<body>
+    <div id="divCounter"></div>
+    <script type="text/javascript">
+    
+    if(localStorage.getItem("counter")){
+      if(localStorage.getItem("counter") >= 10){
+        var value = 0;
+      }else{
+        var value = localStorage.getItem("counter");
+      }
+    }else{
+      var value = 0;
+    }
 
-	<div>
-	<p class="lead">Describe The Video</p>
-	<%= f.text_area :description, class: "form-control" %>
-	</div><br>
 
-	<div><%= submit_tag("Upload Item", class: "btn btn-danger") %></div>
-	<br>
+    var counter = function (){
+      document.getElementById('divCounter').innerHTML = localStorage.getItem("counter");
+      if(value >= 10){
+        localStorage.setItem("counter", 0);
+        value = 0;
+      }else{
+        value = parseInt(value)+1;
+        localStorage.setItem("counter", value);
+      }
+    };
 
-<% end %>
+var interval = setInterval(function (){counter(value);}, 1000);
+  </script>
+</body>
+
 
       
 

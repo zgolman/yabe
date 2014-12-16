@@ -65,7 +65,10 @@
     
     <script type="text/javascript">
     var sTime = new Date().getTime();
-    var countDown = <%= @auction.auction_period%>; // Number of seconds to count down from.        
+    var countDown = 200; // Number of seconds to count down from.        
+    // var eTime = sTime+(countDown * 1000);
+    // console.log(eTime)
+ 
     function UpdateCountDownTime() {
         var cTime = new Date().getTime();
         var diff = cTime - sTime;
@@ -99,4 +102,7 @@
     UpdateCountDownTime();
     var counter = setInterval(UpdateCountDownTime, 500);
 
-    </script>
+
+   document.cookie="auction_period; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+
+</script>
