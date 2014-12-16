@@ -1,8 +1,14 @@
 <br>
 
-<h1> Welcome <%= current_user.email %></h2>
 <br>
+<div class="question">
 <p>What would you like to do today?</p>
-	<%= button_to "Put up some CA$H", new_auction_path, :method => :get %>
-
-	<%= button_to "Start Shopping", new_auction_path, :method => :get %>
+</div>
+  <div class="buttons">
+    <div class="cash-button">
+	   <%= button_to "Put up some CA$H", new_auction_path, :method => :get %>
+    </div>
+    <div class="shopping-button">
+	   <%= button_to "Start Shopping", new_auction_path, :method => :get %>
+    </div>  
+  </div>

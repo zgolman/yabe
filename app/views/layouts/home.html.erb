@@ -1,5 +1,8 @@
+
+
 <div class="open-modal">
-<a href="#openModal">Sign Up</a>
+<a href="#openModal">SIGN UP</a>
+<a href="#openModal">Login</a>
 </div>
 
 <div id="openModal" class="modalDialog">
@@ -21,6 +24,30 @@
         </ul>
       </div>
     <% end %>
+    <div class="open-modal">
+
+</div>
+
+<div id="openModal" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close"></a>
+  
+  <%= form_tag sessions_path do %>
+    <div class="field">
+      <%= label_tag :email %><br />
+      <%= text_field_tag :email, params[:email] %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %><br />
+      <%= password_field_tag :password %>
+    </div>
+    <div class="actions"><%= submit_tag "Log In" %></div>
+  <% end %>
+
+</p>
+  </div>
+  
+</div>
 
     <div class="field">
       <%= f.label :email %><br />
@@ -40,10 +67,12 @@
 
 <% end %>
 
-   
-
+  
 </p>
   </div>
   
 </div>
+
+
+
   

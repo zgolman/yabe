@@ -6,9 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="animate.min.css">
   <%= csrf_meta_tags %>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
       <a class="navbar-brand" href="/home">
@@ -19,6 +17,24 @@
         <div class="e">e</div>
     </div>
 
+  
+    </div>
+    <html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>CSS MenuMaker</title>
+</head>
+<body>
+
+<div id="cssmenu">
+<ul>
+   <li><a href="file:///Users/SamanthaSamuels/Downloads/index%20(5).html#"><span>Buy</span></a></li>
+   <li><a href="file:///Users/SamanthaSamuels/Downloads/index%20(5).html#"><span>Sell</span></a></li>
+   <li class="last"><a href="file:///Users/SamanthaSamuels/Downloads/index%20(5).html#"><span>Log In</span></a></li>
+</ul>
+</div>
+
     <div id="user_header">
       <% if current_user %>
       <div class="logged-in">
@@ -26,29 +42,13 @@
           <%= link_to "Log Out", logout_path %>
       </div>
           <% else %>
-          <% end %>
-            <%= button_to "Log In", login_path, :method => :get, class: "login-button" %>
-          
 
+          <% end %>
+  
       <% flash.each do |name,msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
         <% end %>
 
-  <div class="nav-background">
-  </div>
-  <div class="second-background">
-  </div>
-    </div>
-
 
 <%= yield %>
 
-
-<!-- <h2 class="slogan">A reverse Auction</h2>
-<!-- Modal -->
- 
-
-  <div class="slogan-background">
-  </div>
-</body>
-</html>

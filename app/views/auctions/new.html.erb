@@ -9,15 +9,15 @@
 
 <%= form_for @auction do |f| %>
 
-  <div class="field">
+  <div class="amount">
     <%= f.label :amount %>
     $<%= f.text_field :amount %>
   </div>
-  <div class="field">
+  <div class="auction-period">
     <%= f.label :auction_period %>
     <%= f.select(:auction_period, options_for_select(key)) %>
   </div>  
- <div class="field">
+ <div class="category">
     <%= f.label :category%> 
    <div id="investment"> 
    <%= f.radio_button(:category, "Sporting Goods") %>

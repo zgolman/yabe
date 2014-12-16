@@ -1,4 +1,6 @@
-<div class="open-modal">
+
+
+<div class="open-signup">
 <a href="#openModal">Sign Up</a>
 </div>
 
@@ -8,9 +10,6 @@
     <p><% if (current_user == nil) %>
 
   <%= form_for @user do |f| %>
-  <div class="signup-logo">
-    <h1>Sign Up </h1>
-  </div>
     <% if @user.errors.any? %>
       <div class="error_messages">
         <h2>Form is invalid</h2>
@@ -45,5 +44,7 @@
 </p>
   </div>
   
+</div>
+<div class="sand-clock">
 </div>
   
