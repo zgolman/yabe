@@ -1,7 +1,3 @@
-
-
-
-
 <script src='/assets/auctions.js'></script>
 <br>
 <br>
@@ -13,26 +9,55 @@
 <strong>Category:</strong> <%= @auction.category %><br>
 
 
+
 <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
 </div>
 <br>
 
 
-<%= button_to "Bid Now", addPhoto_path, :method => :get %>
+<div class = "bid">
+    <div class="open-modal">
+    <button><a href="#openModal">BID NOW</a></button>
+    </div>
+</div>
+    <div id="openModal" class="modalDialog">
+    <div>
+    <a href="#close" title="Close" class="close"></a>
+    <!-- <p><%# if (current_user == nil) %> -->
+        <div>
+              <%= @auction.id %>
+              <%= form_for @photo, as: :photo, url: photo_create_path, method: :post do |f| %>
+                <%= f.hidden_field :auction_id, :value => @auction.id %>
+                <div>
+                    Name: <%= f.text_area :name, class: "form-control" %>
+                </div><br>
+                <div>
+                    Upload Image: <%= f.file_field :image, class: "form-control" %>
+                </div><br>
+                <div>
+                    Description: <%= f.text_area :description, class: "form-control" %>
+                </div><br>
+            
+                <div><%= submit_tag("Post New Item", class: "btn btn-danger") %></div>
+                <br>
+            <% end %> 
+        </div>
+    </div>
+</div>
 
+   
 
-            <div id="commentlist"></div>
-                        
-            <% @auctionphotos.order("created_at desc").each do |jc| %>
-                <p class="container">Posted: <%= jc.name =></p>
-                <div id="commentlist"></div>
-            <% end %>
-                        
+    <div>
+    <% @photos.each do |t| %>
+        <%= t.name %>
+        <%= t.image %>
+    <%end %>
+</div>
+
     
     <script type="text/javascript">
     var sTime = new Date().getTime();
     var countDown = <%= @auction.auction_period%>; // Number of seconds to count down from.        
-
     function UpdateCountDownTime() {
         var cTime = new Date().getTime();
         var diff = cTime - sTime;
@@ -65,27 +90,12 @@
     }
     UpdateCountDownTime();
     var counter = setInterval(UpdateCountDownTime, 500);
-
-
-    // document.cookie = countDown;
-    // 200 seconds countdown
-        
-
-        //current timestamp
-        var now   = Date.parse(new Date());
-
-        //ready should be stored in your cookie
-        var ready = Date.parse(new Date (now + countDown  * 1000)); // * 1000 to get ms
-
-
-        //every 1000 ms
-        setInterval(function()
-        {
-            var sec = ( ready - Date.parse(new Date()) )/1000;
-            document.cookie = sec + " seconds left";
-
-        },1000);
-
- </script>
-
+// var loading_dialog = $('#loading_dialog');
+// loading_dialog
+//     .ajaxStart(function () {
+//         loading_dialog.modal('show');
+//     })
+//     .ajaxStop(function () {
+//         loading_dialog.modal('hide');
+// });
 
