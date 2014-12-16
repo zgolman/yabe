@@ -7,6 +7,7 @@ Yabe::Application.routes.draw do
   get 'option', to: 'users#option', as: 'option'
   get 'charges', to: 'charges#new', as: 'charges'
   get 'dashboard', to: 'users#dashboard', as: 'dashboard'
+  post 'photo' => "photos#create", as: :photo_create
 
   get 'home', to: 'users#home', as: 'home'
   resources :categories

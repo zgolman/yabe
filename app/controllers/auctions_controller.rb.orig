@@ -57,18 +57,27 @@ end
 
   def show
     @auction = Auction.find(params[:id])
-
+<<<<<<< HEAD
+    @photos = Photo.all
+=======
   
     @auction.save
     @list = Photo.all 
-
+>>>>>>> master
     
+
+
     @photo = Photo.new
     @photos = @auction.photos
     # @auctionPhotos = Photo.where(auction_id: @auction.id)
     # @photo.save
 
 
+
+
+    
+
+   
   end
 
   def update
