@@ -64,7 +64,7 @@ end
 
 
     @photo = Photo.new
-    @auctionPhotos = Photo.where(auction_id: @auction.id)
+    # @auctionPhotos = Photo.where(auction_id: @auction.id)
     # @photo.save
 
 
@@ -95,7 +95,7 @@ end
 private
     # Never trust parameters from the scary internet, only allow the white list through.
   	def auction_params
-      params.require(:auction).permit(:amount, :auction_period, :category, :user_id
+      params.require(:auction).permit(:amount, :auction_period, :category, :user_id)
   	end
    
 end

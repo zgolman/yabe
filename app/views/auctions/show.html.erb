@@ -11,6 +11,7 @@
 <strong>Category:</strong> <%= @auction.category %><br>
 
 
+
 <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
 </div>
 <br>
@@ -26,8 +27,8 @@
     <a href="#close" title="Close" class="close"></a>
     <!-- <p><%# if (current_user == nil) %> -->
         <div>
-              <%= form_for @photo, :url => {:action => :create} do |f| %>
-
+              <%= form_for @photo, as: :photo, url: photo_create_path, method: :post do |f| %>
+                <% f.hidden_field :auction_id, :value => @auction.id %>
                 <div>
                     Name: <%= f.text_area :name, class: "form-control" %>
                 </div><br>
@@ -47,7 +48,7 @@
    <div>
      $<%= @photo.name %>
      <%= @photo.id %>
- </div>
+    </div>
 
     
     <script type="text/javascript">
