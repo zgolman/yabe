@@ -46,13 +46,21 @@
 </div>
 
    
+            <div class="row">       
+                <h1 id="index_title">Current Bids</h1>
 
-    <div>
-    <% @photos.each do |t| %>
-        <%= t.name %>
-        <%= t.image %>
-    <%end %>
-</div>
+                <% @photos.each do |j| %>
+                    <div class="thumbs">
+                        <h2>Name:</h2> <h3><%= j.name %></h3><br> 
+                        <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
+                        <h2>Description:</h2> <h3><%= j.description %></h3><br> 
+                    </div>
+                <% end %> 
+
+            </div>              
+   
+
+
 
     
     <script type="text/javascript">
@@ -90,12 +98,5 @@
     }
     UpdateCountDownTime();
     var counter = setInterval(UpdateCountDownTime, 500);
-// var loading_dialog = $('#loading_dialog');
-// loading_dialog
-//     .ajaxStart(function () {
-//         loading_dialog.modal('show');
-//     })
-//     .ajaxStop(function () {
-//         loading_dialog.modal('hide');
-// });
 
+    </script>
