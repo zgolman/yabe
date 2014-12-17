@@ -1,15 +1,13 @@
 
-
-<div class="open-signup">
-<a href="#openModal">Sign Up</a>
-</div>
-
-<div id="openModal" class="modalDialog">
-  <div>
-    <a href="#close" title="Close" class="close"></a>
-    <p><% if (current_user == nil) %>
-
-  <%= form_for @user do |f| %>
+<div class="modalDialog" id="openModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+ 
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
       <div class="error_messages">
         <h2>Form is invalid</h2>
@@ -34,17 +32,59 @@
       <%= f.password_field :password_confirmation %>
     </div>
 
-    <div class="actions"><%= f.submit "Sign Up" %></div>
+    <div class="actions"><%= f.submit "Sign Up" %>
+    </div>
   <% end %>
-
-<% end %>
-
-   
-
-</p>
-  </div>
-  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-toggle="modal" href="myModal" data-dismiss="modalDialog">x</button>
+      </div>
+    </div>
 </div>
+
+
+
+<div class="modalDialog" id="openModal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+ 
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="dialog"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+    
+
+    <div class="actions"><%= f.submit "Login" %>
+    </div>
+  <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">x</button>
+      </div>
+    </div>
+</div>
+
+
 <div class="sand-clock">
 </div>
   

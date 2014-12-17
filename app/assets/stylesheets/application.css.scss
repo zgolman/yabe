@@ -23,7 +23,7 @@ body {
   font-family: AvenirLTStd-Medium, "Helvetica", sans-serif;
   background-color: white;
   background-repeat: no-repeat;
-  background-size: 460px;
+  background-size: 500px;
   margin-bottom: 800px;
 
 }
@@ -56,7 +56,7 @@ body {
 }
 
 .yabe {
-  margin-top: 1px;
+  margin-top: 5px;
 }
 .open-login {
   float: right;
@@ -97,10 +97,14 @@ body {
 }
 
 .logged-in {
-  margin-left: 1150px;
-  margin-top: -30px;
+  margin-left: 900px;
+  margin-top: 10px;
   font-family: 'Open Sans', sans-serif;
-  color: white;
+  color: black;
+}
+
+.logged-in a {
+  color: black;
 }
 .signup-logo a {
   margin-top: 10px;
@@ -108,6 +112,16 @@ body {
   color: white;
 }
 
+.logout-link {
+  margin-right: 5px;
+  margin-top: 30px;
+  color: red;
+  margin-top: 5px;
+}
+
+.logout-link a {
+  color: red;
+}
 .cash-button a {
 cursor: pointer;
 background: green;
@@ -178,9 +192,10 @@ font-size: 20px;
 
 .sand-clock {
   background-image: url(http://www.hackathonbd.com/wp-content/uploads/2014/02/18713_miscellaneous_sand_clock.jpg);
-  margin-top: 40px;
+  margin-top: -40px;
   width: 100%;
-  height: 550px;
+  height: 900px;
+
   
 }
 
@@ -286,118 +301,38 @@ font-size: 20px;
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 #cssmenu {
-  background: black;
-  
+position: fixed;
+top: 0;
+color: #ffffff;
+text-align: right;
+color: rgba(1, 1, 1, 0.8);
 }
-#cssmenu ul {
-  list-style: none;
-  padding: 0;
-  line-height: 1;
-  display: block;
-  zoom: 1;
+
+#cssmenu a {
+font-size: 17px;
+padding-left: 15px;
+padding-right: 15px;
+color: white;
+text-decoration: none;
 }
-#cssmenu ul:after {
-  display: block;
-  font-size: 0;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+
+#cssmenu a:hover {
+color: grey;
+} 
+
+.login {
+  margin-right: 100px;
+  margin-top: -40px;
 }
-#cssmenu ul li {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
+
+.signup {
+  margin-top: 5px;
+  margin-left: 1100px;
+}
+
+#index_title {
   text-align: center;
-  margin-top: 18px;
 }
-#cssmenu ul li a {
-  color: white;
-  text-decoration: none;
-  display: inline;
-  padding: 15px 25px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 17px;
-  margin-top: -10px;
-  position: relative;
-  -webkit-transition: color .25s;
-  -moz-transition: color .25s;
-  -ms-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
-}
-#cssmenu ul li a:hover {
-  color: blue;
-}
-#cssmenu ul li a:hover:before {
-  width: 100%;
-}
-#cssmenu ul li a:after {
-  // content: "";
-  display: block;
-  position: absolute;
-  right: -3px;
-  top: 19px;
-  height: 6px;
-  width: 6px;
-}
-
-#cssmenu ul li a:before {
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 0;
-  background: #333333;
-  -webkit-transition: width .25s;
-  -moz-transition: width .25s;
-  -ms-transition: width .25s;
-  -o-transition: width .25s;
-  transition: width .25s;
-}
-#cssmenu ul li.last > a:after,
-#cssmenu ul li:last-child > a:after {
-  display: none;
-}
-#cssmenu ul li.active a {
-  color: #333333;
-}
-#cssmenu ul li.active a:before {
-  width: 100%;
-}
-#cssmenu.align-right li.last > a:after,
-#cssmenu.align-right li:last-child > a:after {
-  display: block;
-}
-#cssmenu.align-right li:first-child a:after {
-  display: none;
-}
-@media screen and (max-width: 768px) {
-  #cssmenu ul li {
-    float: none;
-    display: block;
-  }
-  #cssmenu ul li a {
-    width: 100%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border-bottom: 1px solid #fb998c;
-  }
-  #cssmenu ul li.last > a,
-  #cssmenu ul li:last-child > a {
-    border: 0;
-  }
-  #cssmenu ul li a:after {
-    display: none;
-  }
-  #cssmenu ul li a:before {
-    display: none;
-  }
-}
-
 .carousel {
     margin: 0 auto;
     position: relative;
