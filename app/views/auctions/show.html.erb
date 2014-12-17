@@ -1,6 +1,7 @@
 <script src='/assets/auctions.js'></script>
 <br>
 <br>
+<% @work = current_user.id %>
 
 
 <br>
@@ -28,6 +29,7 @@
               <%= @auction.id %>
               <%= form_for @photo, as: :photo, url: photo_create_path, method: :post do |f| %>
                 <%= f.hidden_field :auction_id, :value => @auction.id %>
+                <%= f.hidden_field :user_id, :value => current_user %>
                 <div>
                     Name: <%= f.text_area :name, class: "form-control" %>
                 </div><br>
@@ -43,38 +45,23 @@
             <% end %> 
         </div>
     </div>
-
-
-
-
+</div>
 
    
-            <div class="row">    
-                <div class="current-listings">   
-                    <h1 id="index_title">Current Listings</h1>
-                </div>
-                  
+            <div class="row">       
+                <h1 id="index_title">Current Bids</h1>
+
                 <% @photos.each do |j| %>
                     <div class="thumbs">
-                        <h3><%= j.name %></h3>
+                        <%= j.user_id %>
+                        <h2>Name:</h2> <h3><%= j.name %></h3><br> 
                         <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
-                        <h3><%= j.description %></h3><br> 
+                        <h2>Description:</h2> <h3><%= j.description %></h3><br> 
                     </div>
                 <% end %> 
 
             </div>              
    
-
-   <ul class="pgwSlideshow">
-    <li>j.image</li>
-        <a href="http://en.wikipedia.org/wiki/Monaco" target="_blank">
-            <img src="monaco.jpg" alt="Monaco">
-        </a>
-    </li>
-</ul>
- 
-    <script type="text/javascript">
-
 
 
 
@@ -92,7 +79,6 @@
     var timeElasped = testAgain - aucCreated;
     console.log(timeElasped);
     console.log("amt of time left", timeLeft);
->>>>>>> 42c27e4d38d702e5aef03cb121e6afe9ca25a1f3
     var sTime = new Date().getTime();
     console.log("what");
     //countDown is the time left of the auction
@@ -110,6 +96,7 @@
  
     function UpdateCountDownTime() {
         var cTime = new Date().getTime();
+        console.log('this is running still');
         var diff = cTime - sTime;
         // var diff =
         var timeStr = '';
