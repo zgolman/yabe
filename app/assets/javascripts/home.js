@@ -1,0 +1,3 @@
+$('.test').textFx({
+    type: 'rotate'
+});
