@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141211034231) do
 
   create_table "auctions", force: true do |t|
     t.string   "amount"
-    t.datetime "auction_period"
+    t.integer  "auction_period"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
