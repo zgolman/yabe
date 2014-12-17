@@ -46,14 +46,16 @@
 </div>
 
    
-            <div class="row">       
-                <h1 id="index_title">Current Bids</h1>
+            <div class="row">    
+                <div class="current-listings">   
+                    <h1 id="index_title">Current Listings</h1>
+                </div>
                   
                 <% @photos.each do |j| %>
                     <div class="thumbs">
-                        <h2>Name:</h2> <h3><%= j.name %></h3><br> 
+                        <h3><%= j.name %></h3>
                         <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
-                        <h2>Description:</h2> <h3><%= j.description %></h3><br> 
+                        <h3><%= j.description %></h3><br> 
                     </div>
                 <% end %> 
 
