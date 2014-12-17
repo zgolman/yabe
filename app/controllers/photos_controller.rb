@@ -8,10 +8,10 @@
     def create
       # Find our parent decision that we should attach to
       # @photo = current_user.photos.new(photo_params)
-     
-      @photo = Photo.new(photo_params)
+      @user = User.find(params[:photo][:user_id])
+      @user.photos << Photo.new(photo_params)
       # Attach this criterion to a decision
-      if @photo.save
+      if @user.save
         redirect_to auctions_path
       else
         render 'new'
@@ -19,6 +19,7 @@
     end
   
     def show
+
       @photo = Photo.find(params[:id])
     end
   

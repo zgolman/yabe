@@ -17,7 +17,7 @@ class AuctionsController < ApplicationController
     respond_to do |format|
 
     if @auction.save
-            Auction.create(:user_id => @user.id)
+            
 
             session[:user_id] = @user.id
             format.html { redirect_to @auction, notice: 'User was successfully created.' }
@@ -43,6 +43,8 @@ end
     
     @photo = Photo.new
     @photos = @auction.photos
+
+    @current_user = current_user
     # @auctionPhotos = Photo.where(auction_id: @auction.id)
     # @photo.save
 
