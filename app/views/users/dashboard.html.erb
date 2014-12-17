@@ -25,6 +25,10 @@
 	
 	  <div class="row">       
             <h1 id="index_title">Current Bids</h1>
+            
+            <% if @photos.length > 1 %>
+            <div> seeing if there is a photo </div>
+            <% end %>
 
             <% @photos.each do |j| %>
                 <div class="thumbs">
