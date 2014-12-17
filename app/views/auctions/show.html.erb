@@ -1,6 +1,7 @@
 <script src='/assets/auctions.js'></script>
 <br>
 <br>
+<% @work = current_user.id %>
 
 
 <br>
@@ -28,6 +29,7 @@
               <%= @auction.id %>
               <%= form_for @photo, as: :photo, url: photo_create_path, method: :post do |f| %>
                 <%= f.hidden_field :auction_id, :value => @auction.id %>
+                <%= f.hidden_field :user_id, :value => current_user %>
                 <div>
                     Name: <%= f.text_area :name, class: "form-control" %>
                 </div><br>
@@ -43,17 +45,15 @@
             <% end %> 
         </div>
     </div>
-
-
-
-
+</div>
 
    
             <div class="row">       
                 <h1 id="index_title">Current Bids</h1>
-                  
+
                 <% @photos.each do |j| %>
                     <div class="thumbs">
+                        <%= j.user_id %>
                         <h2>Name:</h2> <h3><%= j.name %></h3><br> 
                         <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
                         <h2>Description:</h2> <h3><%= j.description %></h3><br> 
@@ -62,15 +62,46 @@
 
             </div>              
    
- 
-    <script type="text/javascript">
+
+
+
+    
+    <script>
+    // var time = <%=raw @auction.created_at.to_i %>
+    var aucCreated = <%=raw (@auction.created_at.to_f * 1000).to_i %>
+    var auctionLength = <%=raw (@auction.auction_period) %>
+    console.log("auc length", auctionLength);
+    console.log("when auc was created", aucCreated);
+    var test = new Date();
+    var testAgain = test.getTime();
+    console.log("current time", testAgain);
+    var timeLeft = (aucCreated+auctionLength) - testAgain;
+    var timeElasped = testAgain - aucCreated;
+    console.log(timeElasped);
+    console.log("amt of time left", timeLeft);
     var sTime = new Date().getTime();
-    var countDown = <%= @auction.auction_period%>; // Number of seconds to count down from.        
+    console.log("what");
+    //countDown is the time left of the auction
+    var countDown = 3600;
+     // Number of seconds to count down from.        
+    // var eTime = sTime+(countDown * 1000);
+    // console.log(eTime)
+    Number.prototype.toFixedDown = function(digits) {
+        var re = new RegExp("(\\d+\\.\\d{" + digits + "})(\\d)"),
+            m = this.toString().match(re);
+        return m ? parseFloat(m[1]) : this.valueOf();
+    };
+    var timeLeftAgain = (timeLeft/1000).toFixedDown(0);
+    console.log(timeLeftAgain);
+ 
     function UpdateCountDownTime() {
         var cTime = new Date().getTime();
+        console.log('this is running still');
         var diff = cTime - sTime;
+        // var diff =
         var timeStr = '';
-        var seconds = countDown - Math.floor(diff / 1000);
+        // diff is the time to start counting down from
+        var seconds = timeLeftAgain - Math.floor(diff/1000);
         if (seconds >= 0) {
             var hours = Math.floor(seconds / 3600);
             var minutes = Math.floor( (seconds-(hours*3600)) / 60);
@@ -90,6 +121,7 @@
             }else{
                 timeStr = timeStr + ":" + seconds;
             }
+            // console.log(seconds)
             document.getElementById("countdowntimertxt").innerHTML = timeStr;
         }else{
             document.getElementById("countdowntimertxt").style.display="none";
@@ -97,6 +129,6 @@
         }
     }
     UpdateCountDownTime();
+    //every .5 seconds run UpdateCountDownTime to display the clock
     var counter = setInterval(UpdateCountDownTime, 500);
-
     </script>

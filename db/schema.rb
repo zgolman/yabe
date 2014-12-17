@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209010749) do
+ActiveRecord::Schema.define(version: 20141217053751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "auctions", force: true do |t|
     t.string   "amount"
-    t.datetime "auction_period"
+    t.integer  "auction_period"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 20141209010749) do
   end
 
   add_index "auctions", ["user_id"], name: "index_user_id", using: :btree
+
+  create_table "categories", force: true do |t|
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "charges", force: true do |t|
     t.string   "stripeToken"
@@ -45,7 +51,19 @@ ActiveRecord::Schema.define(version: 20141209010749) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "auction_id"
     t.integer  "user_id"
+  end
+
+  add_index "photos", ["auction_id"], name: "index_photo_id", using: :btree
+  add_index "photos", ["user_id"], name: "index_user_photo_id", using: :btree
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
