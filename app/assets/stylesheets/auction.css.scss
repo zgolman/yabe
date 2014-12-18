@@ -2,19 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.logged-in {
+  margin-left: 900px;
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+}
+
+.logged-in a {
+  color: black;
+}
 .current-listings {
 	text-align: center;
 }
 
 .whole{
-	background-color: #F0F0F0;
+	
 }
 
 .auction_index_container{
-	width: 970px;
-	max-width: none !important;
-	margin: 0 auto;
-	background-color: #F0F0F0;
+	
 }
 .thumbs{
 	float: left;
@@ -32,27 +39,13 @@
 	margin-left: 40%;
 }
 
+.index_title {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
 .cash-button a {
 cursor: pointer;
-color: black;
-font-size: 20px;
-zoom: 1;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
--ms-border-radius: 5px;
--o-border-radius: 5px;
-border-radius: 200px;
-transition: 200ms;
-width: 300px;
-height: 80px;
-text-align: center;
-margin-right: 30px;
-
-}
-
-.shopping-button a {
-cursor: pointer;
-background: blue;
+background: green;
 color: white;
 text-transform: uppercase;
 text-decoration: none;
@@ -77,18 +70,43 @@ width: 300px;
 height: 80px;
 text-align: center;
 font-size: 20px;
+
 }
 
+.buttons2 {
+	margin: auto;
+
+}
+
+.dashboard-button {
+	margin-right: 100px;
+	text-align: center;
+}
 .dashboard-button a {
+cursor: pointer;
+background: red;
 color: white;
 text-transform: uppercase;
+text-decoration: none;
+font-weight: 600;
+padding: 0 2em;
 font-size: 1em;
+line-height: 1.4em;
+padding: 1em 2em;
+border: none;
+outline: none;
+position: relative;
+display: inline-block;
+vertical-align: baseline;
+zoom: 1;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 -ms-border-radius: 5px;
 -o-border-radius: 5px;
 border-radius: 200px;
+transition: 200ms;
+width: 300px;
+height: 80px;
 font-size: 20px;
-margin-left: 36%;
-z-index: 50;
+text-align: center;
 }
