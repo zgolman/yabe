@@ -5,16 +5,21 @@
       <div class="row">   
         <h1 id="index_title">Auctions</h1>
 
-        <% @auctions.each do |j| %>
+<% @auctions.each do |j| %>
+
+<% @timeleft.each do |x| %>
           <div class="thumbs">
             <strong>Amount:</strong> $<%= j.amount %><br>
             <strong>Category:</strong> <%= j.category %><br>
-            <strong>Time Remaining:</strong> $<%= j.amount %><br>
+            <strong>Time Remaining:</strong> <%= j.created_at.to_i  %><br>
+            <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
+            Time Remaining: <%= (x/60/60).to_i %> hrs <%= Time.at(x).strftime "%M:%S" %>
             <%= link_to "View this Auction!", auction_path(j) %><br>
             
 
               <br>
            <% end %>    
+        <% end %>
           </div>
         
  
@@ -22,9 +27,16 @@
     </div>
  
   </div>
-<form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+
+
+
+
+ <div class="buttons2">
+    <span class="cash-button">
+       <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
+    </span>
+    <span class="dashboard-button">
+     <%= link_to "Your Dashboard", dashboard_path, :method => :get %>
+    </span>  
+  </div>
+
