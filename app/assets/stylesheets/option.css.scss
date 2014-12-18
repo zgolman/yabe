@@ -2,7 +2,8 @@
   margin-top: 10px;
 }
 .logged-in {
-  margin-right: 900px;
+  position: absolute;
+  right: 100px;
   font-family: 'Open Sans', sans-serif;
   color: black;
 }
@@ -13,7 +14,8 @@
 }
 
 .logout-link {
-  margin-left: 930px;
+  position: absolute; 
+  right: 500px;
   color: red;
   // margin-left: 150px;
 }
