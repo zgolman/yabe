@@ -20,47 +20,46 @@
   
     </div>
     <html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>CSS MenuMaker</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS MenuMaker</title>
 </head>
 <body>
 
 <div id="cssmenu">
   <div class="nav-background">
 </div>
-
+  
 <ul>
   <% if !current_user%>
-   <li>
-    <div class="signup">
-     <a href="#openModal-1">SIGN UP</a>
+  <li>
+    <div class="signup" style="float: left">
+    <a href="#openModal-1">SIGN UP</a>
     </div>
-   </li>
-   <li class="last">
+  </li>
+  <li class="last">
     <div class="login">
-     <a href="#openModal-2">LOGIN</a>
+    <a href="#openModal-2">LOGIN</a>
     </div>
-   </li>
-   <%end%>
+  </li>
+  <%end%>
 </ul>
 </div>
       <% if current_user %>
-         <span class="logged-in">
-           Welcome, <%= current_user.email %>!
-         </span>
-         <span class="logout-link">
+        <span class="logged-in">
+          Welcome, <%= current_user.email %>!
+        </span>
+        <span class="logout-link">
             <%= link_to "Log Out", logout_path %>
-         </span>
+        </span>
       <% else %>
 
       <% end %>
       </div>
       <% flash.each do |name,msg| %>
-     
+    
       <% end %>
 
 
 <%= yield %>
-

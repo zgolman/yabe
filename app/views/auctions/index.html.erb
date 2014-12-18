@@ -6,19 +6,16 @@
         <h1 id="index_title">Auctions</h1>
 
 <% @auctions.each do |j| %>
-
-<% @timeleft.each do |x| %>
           <div class="thumbs">
             <strong>Amount:</strong> $<%= j.amount %><br>
             <strong>Category:</strong> <%= j.category %><br>
-            <strong>Time Remaining:</strong> <%= j.created_at.to_i  %><br>
-            <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
-            Time Remaining: <%= (x/60/60).to_i %> hrs <%= Time.at(x).strftime "%M:%S" %>
+            <strong>Time Remaining:</strong>
+            <%= @timeleft[j.id-1][:hours] %> hours <%= @timeleft[j.id-1][:minutes] %> minutes <%= @timeleft[j.id-1][:seconds] %> seconds
             <%= link_to "View this Auction!", auction_path(j) %><br>
             
 
               <br>
-           <% end %>    
+         
         <% end %>
           </div>
         
