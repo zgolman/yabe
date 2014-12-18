@@ -1,37 +1,36 @@
-.logged-in {
-  margin-left: 900px;
+.yabe {
   margin-top: 10px;
+}
+.logged-in {
+  position: absolute;
+  right: 100px;
   font-family: 'Open Sans', sans-serif;
   color: black;
 }
 
 .logged-in a {
   color: black;
+  margin-top: 10px;
 }
 
+.logout-link {
+  position: absolute; 
+  right: 500px;
+  color: red;
+  // margin-left: 150px;
+}
+
+.logout-link a {
+  margin-top: 30px;
+  color: red;
+}
+
+.cash-button {
+  border-radius: 100px;
+  
+}
 .cash-button a {
-color: black;
-text-transform: uppercase;
-font-size: 20px;
-margin-left: 36%;
-}
-
-.shopping-button a {
-color: white;
-text-transform: uppercase;
-font-size: 20px;
-margin-left: 36%;
-}
-
-.dashboard-button a {
-color: white;
-text-transform: uppercase;
-font-size: 20px;
-margin-left: 36%;
-}
-
-
-.cash-button a {
+  float:left;
 cursor: pointer;
 background: green;
 color: white;
@@ -39,7 +38,7 @@ text-transform: uppercase;
 text-decoration: none;
 font-weight: 600;
 padding: 0 2em;
-font-size: 20px;
+font-size: 1em;
 line-height: 1.4em;
 padding: 1em 2em;
 border: none;
@@ -52,16 +51,21 @@ zoom: 1;
 -moz-border-radius: 5px;
 -ms-border-radius: 5px;
 -o-border-radius: 5px;
-border-radius: 200px;
 transition: 200ms;
 width: 300px;
 height: 80px;
-text-align: center;
-margin-right: 30px;
+font-size: 20px;
+margin-right: 20px;
+margin-left: 260px;
 
 }
 
+.shopping-button {
+  border-radius: 100px;
+}
+
 .shopping-button a {
+float:left;
 cursor: pointer;
 background: blue;
 color: white;
@@ -82,18 +86,26 @@ zoom: 1;
 -moz-border-radius: 5px;
 -ms-border-radius: 5px;
 -o-border-radius: 5px;
-border-radius: 200px;
 transition: 200ms;
 width: 300px;
 height: 80px;
-text-align: center;
 font-size: 20px;
+margin-right: 20px;
 }
 
-.dashboard-button a {
+.dashboard-button {
+border-radius: 100px;
 
+}
+.dashboard-button a {
+float:left;
+cursor: pointer;
+background: red;
 color: white;
 text-transform: uppercase;
+text-decoration: none;
+font-weight: 600;
+padding: 0 2em;
 font-size: 1em;
 line-height: 1.4em;
 padding: 1em 2em;
@@ -107,12 +119,20 @@ zoom: 1;
 -moz-border-radius: 5px;
 -ms-border-radius: 5px;
 -o-border-radius: 5px;
-border-radius: 200px;
 transition: 200ms;
 width: 300px;
 height: 80px;
-text-align: center;
 font-size: 20px;
-margin-left: 36%
+margin-right: 20px;
 }
 
+.buttons{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 120%;
+
+
+
+
+}

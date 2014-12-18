@@ -1,18 +1,19 @@
 <div class = "dash">
+  <div class="your-dashboard">
+	 <h1>WELCOME TO YOUR DASHBOARD</h1>
+  </div>
 
-
-	<h1>Dashboard</h1>
-
-
-
-
-	<h2>Current Auctions</h2>
+  <div class="current-auctions">
+	 <h2>Current Auctions</h2>
+  </div>
 	<% @auctions.each do |j| %>
-          <div class="thumbs">
+          <div class="view-auction">
             <strong>Amount:</strong> $<%= j.amount %><br>
             <strong>Category:</strong> <%= j.category %><br>
             <strong>Time Remaining:</strong> $<%= j.amount %><br>
-            <%= link_to "View this Auction!", auction_path(j) %><br>
+            <div class="this-auction">
+              <%= link_to "View this Auction!", auction_path(j) %><br>
+            </div>
 	   		<br>
             <% end %>    
     
@@ -25,8 +26,7 @@
 
 
 	
-	  <div class="row">       
-            <h1 id="index_title">Current Bids</h1>
+	  <div class="row">
 
             <% @photos.each do |j| %>
                 <div class="thumbs">

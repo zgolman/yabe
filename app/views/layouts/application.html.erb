@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Yabe</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
@@ -45,18 +45,14 @@
    </li>
    <%end%>
 </ul>
-
 </div>
-
-
-     <div id="user_header">
       <% if current_user %>
-         <div class="logged-in">
+         <span class="logged-in">
            Welcome, <%= current_user.email %>!
-           <div class="logout-link">
+         </span>
+         <span class="logout-link">
             <%= link_to "Log Out", logout_path %>
-          </div>
-           </div> 
+         </span>
       <% else %>
 
       <% end %>

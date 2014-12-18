@@ -2,20 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.logged-in {
+  margin-left: 900px;
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+}
+
+.logged-in a {
+  color: black;
+}
+
+.logout-link a {
+	color: red;
+	float: right;
+}
+
+.logout-link {
+	color: red;
+	float: right;
+}
 .current-listings {
 	text-align: center;
 }
 
-.whole{
-	background-color: #F0F0F0;
+.amount {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 40px;
 }
 
-.auction_index_container{
-	width: 970px;
-	max-width: none !important;
-	margin: 0 auto;
-	background-color: #F0F0F0;
+.auction-period {
+  margin-left: 330px;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
 }
+
+.category {
+  margin-left: 330px;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#investment {
+  font-size: 20px;
+}
+
 .thumbs{
 	float: left;
 	width: 240px;
@@ -24,35 +57,22 @@
 }
 
 .details{
-	font-size: 20px;
-	margin-left: 40%;
+	font-size: 40px;
+	margin-left: 35%;
 }
 
 .bid{
 	margin-left: 40%;
 }
 
+.index_title {
+	margin-top: -80px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
 .cash-button a {
 cursor: pointer;
-color: black;
-font-size: 20px;
-zoom: 1;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
--ms-border-radius: 5px;
--o-border-radius: 5px;
-border-radius: 200px;
-transition: 200ms;
-width: 300px;
-height: 80px;
-text-align: center;
-margin-right: 30px;
-
-}
-
-.shopping-button a {
-cursor: pointer;
-background: blue;
+background: green;
 color: white;
 text-transform: uppercase;
 text-decoration: none;
@@ -79,16 +99,199 @@ text-align: center;
 font-size: 20px;
 }
 
+.dashboard-button {
+	text-align: center;
+	margin-left: 300px;
+}
 .dashboard-button a {
+cursor: pointer;
+background: red;
 color: white;
 text-transform: uppercase;
+text-decoration: none;
+font-weight: 600;
+padding: 0 2em;
 font-size: 1em;
+line-height: 1.4em;
+padding: 1em 2em;
+border: none;
+outline: none;
+position: relative;
+display: inline-block;
+vertical-align: baseline;
+zoom: 1;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 -ms-border-radius: 5px;
 -o-border-radius: 5px;
 border-radius: 200px;
+transition: 200ms;
+width: 300px;
+height: 80px;
 font-size: 20px;
-margin-left: 36%;
-z-index: 50;
+text-align: center;
+}
+
+.shopping-button {
+  border-radius: 100px;
+  margin-left: 100px;
+  text-align: center;
+}
+
+.shopping-button a {
+cursor: pointer;
+background: blue;
+color: white;
+text-transform: uppercase;
+text-decoration: none;
+font-weight: 600;
+padding: 0 2em;
+font-size: 1em;
+line-height: 1.4em;
+padding: 1em 2em;
+border: none;
+outline: none;
+position: relative;
+display: inline-block;
+vertical-align: baseline;
+zoom: 1;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+transition: 200ms;
+width: 300px;
+height: 80px;
+font-size: 20px;
+text-align: center;
+}
+
+.cash-button3 {
+  border-radius: 100px;
+  margin-right: 350px;
+}
+.cash-button3 a {
+margin-left: 50px;
+margin-top: 100px;
+cursor: pointer;
+background: green;
+color: white;
+text-transform: uppercase;
+text-decoration: none;
+font-weight: 600;
+padding: 0 2em;
+font-size: 1em;
+line-height: 1.4em;
+padding: 1em 2em;
+border: none;
+outline: none;
+position: relative;
+display: inline-block;
+vertical-align: baseline;
+zoom: 1;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+transition: 200ms;
+width: 300px;
+height: 80px;
+font-size: 20px;
+margin-right: -300px;
+
+}
+
+.shopping-button3 {
+  border-radius: 100px;
+  margin-right: 100px;
+}
+
+.shopping-button3 a {
+text-align: center;
+margin-top: 100px;
+margin-left: 60px;
+cursor: pointer;
+background: blue;
+color: white;
+text-transform: uppercase;
+text-decoration: none;
+font-weight: 600;
+padding: 0 2em;
+font-size: 1em;
+line-height: 1.4em;
+padding: 1em 2em;
+border: none;
+outline: none;
+position: relative;
+display: inline-block;
+vertical-align: baseline;
+zoom: 1;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+transition: 200ms;
+width: 300px;
+height: 80px;
+font-size: 20px;
+}
+
+.dashboard-button3 {
+  border-radius: 100px;
+
+}
+.dashboard-button3 a {
+margin-top: -400px;
+margin-left: 880px;
+cursor: pointer;
+background: red;
+color: white;
+text-transform: uppercase;
+text-decoration: none;
+font-weight: 600;
+font-size: 1em;
+line-height: 1.4em;
+padding: 1em 2em;
+border: none;
+outline: none;
+// position: relative;
+display: inline-block;
+vertical-align: baseline;
+zoom: 1;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+transition: 200ms;
+width: 300px;
+height: 80px;
+font-size: 20px;
+}
+.buttons3 {
+	margin: auto;
+}
+
+.buttons2 {
+	float: right;
+	margin-top: 20px;
+}
+
+.key {
+	font-size: 30px;
+}
+
+.bid a {
+	color: white;
+	text-decoration: none;
+	background-color: black;
+	border: none;
+	outline: none;
+	webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	transition: 200ms;
+	width: 300px;
+	height: 80px;
+
 }
