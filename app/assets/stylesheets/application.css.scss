@@ -56,50 +56,11 @@ body {
 }
 
 .yabe {
-  margin-top: 5px;
-}
-.open-login {
-  float: right;
-  margin-right: 40px;
-  margin-top: 10px;
-  width: 90px;
-  border: none;
-  size: 20px;
-  color: black;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.open-login:hover a {
-  color: black;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.open-signup {
-  float: right;
-  margin-right: 830px;
-  margin-top: -23px;
-  width: 90px;
-  border: none;
-  size: 20px;
-  color: black;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-
+  margin-top: 25px;
 }
 
 .open-modal {
   color: black;
-}
-.open-signup:hover a {
-  color: black;
-  text-decoration: none;
-}
-
-.signup-logo a {
-  margin-top: 10px;
-  text-align: center;
-  color: white;
 }
 
 .logout-link {
@@ -113,20 +74,26 @@ body {
   color: red;
 }
 
+.user_header {
+  
+}
 .new-auction-title {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   margin-top: -80px;
   margin-bottom: 100px;
 
-
 }
 
 .sand-clock {
   background-image: url(http://www.hackathonbd.com/wp-content/uploads/2014/02/18713_miscellaneous_sand_clock.jpg);
-  margin-top: -40px;
+  position: fixed;
+  overflow: none;
+  top: 0px;
+  left: 0px;
   width: 100%;
-  height: 900px;
+  height: 100%;
+  z-index: -100;
 
   
 }
@@ -136,33 +103,14 @@ body {
  margin-top: 150px;
 }
 
-.amount {
-  text-align: center;
-  font-size: 40px;
-  font-family: 'Open Sans', sans-serif;
-}
 
-.auction-period {
-  margin-left: 330px;
-  font-size: 40px;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.category {
-  margin-left: 330px;
-  font-size: 40px;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#investment {
-  font-size: 20px;
-}
 .stripe-button {
   margin-top: 500px;
 
 }
 
 .actions {
+  margin-top: 15px;
   text-align: center;
   border-radius: 700px;
   border: none;
@@ -173,6 +121,10 @@ body {
   text-align: center;
   font-size: 50px;
   font-family: 'Open Sans', sans-serif;
+}
+
+#myModalLabel1 {
+  font-size: 30px;
 }
 .modalDialog {
   position: fixed;
@@ -253,98 +205,22 @@ color: grey;
 } 
 
 .login {
-  margin-right: 100px;
-  margin-top: -40px;
+  position: absolute;
+  left: 1200px;
+  font-size: 30px;
 }
 
 .signup {
-  margin-top: 5px;
-  margin-left: 1100px;
+  position: absolute;
+  left: 1280px;
+  top: -10px;
+  font-size: 30px;
 }
 
 #index_title {
   text-align: center;
-}
-.carousel {
-    margin: 0 auto;
-    position: relative;
-    width: 960px;
+   background-position: right -121px;
 }
 
-.carousel-wrapper {height: 380px}
 
-.carousel-box {
-    border: 7px solid #FFF;
-    background-color: #CFCFCF;
-    height: 124px;
-    left: 50%;
-    list-style: none;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    margin: -62px 0 0 -100px;
-    width: 200px;
-    z-index: -1;
-
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(44, 42, 41, 0.05);
-       -moz-box-shadow: 0px 0px 10px 4px rgba(44, 42, 41, 0.05);
-        -ms-box-shadow: 0px 0px 10px 4px rgba(44, 42, 41, 0.05);
-         -o-box-shadow: 0px 0px 10px 4px rgba(44, 42, 41, 0.05);
-            box-shadow: 0px 0px 10px 4px rgba(44, 42, 41, 0.05);
-
-    -webkit-transition: 0.5s ease-out;
-       -moz-transition: 0.5s ease-out;
-        -ms-transition: 0.5s ease-out;
-         -o-transition: 0.5s ease-out;
-            transition: 0.5s ease-out;
-}
-
-.carousel-box.is-active {
-    z-index: 4;
-    width: 380px;
-    height: 280px;
-    left: 50%;
-    margin: 35px 0 0 -192px;
-    top: 0;
-}
-
-.carousel-box.left,
-.carousel-box.right {
-    width: 285px;
-    height: 210px;
-}
-
-.carousel-box.left {
-    left: 50px;
-    margin: 0;
-    top: 90px;
-    z-index: 2;
-    transform: perspective(600px) rotateY(45deg);
-    -webkit-transform: perspective(600) rotateY(45deg);
-}
-
-.carousel-box.right {
-    left: 610px;
-    margin: 0;
-    top: 90px;
-    z-index: 2;
-    transform: perspective(600px) rotateY(-45deg);
-    -webkit-transform: perspective(600) rotateY(-45deg);
-}
-
-.nav-left,
-.nav-right {
-    background: url('../example/assets/css/img/arrow.png') no-repeat left 5px;
-    cursor: pointer;
-    height: 60px;
-    position: absolute;
-    top: 160px;
-    width: 44px;
-}
-
-.nav-left {left: 0}
-
-.nav-right {
-    right: 0;
-    background-position: right -121px;
-}
+   
