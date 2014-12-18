@@ -1,38 +1,61 @@
+<div class="whole">
+  <div class="auction_index_container">
 
 
-<div class="auction_index_container">
-    <div class="container">
-      <div class="row">  
-        <div class="index_title"> 
-          <h1 id="index_title">AUCTIONS</h1>
-        </div>
-
-        <% @auctions.each do |j| %>
-          <div class="thumbs">
-            <strong>Amount:</strong> $<%= j.amount %><br>
-            <strong>Category:</strong> <%= j.category %><br>
-            <strong>Time Remaining:</strong> <%= ((j.created_at.to_i) - Time.now.to_i) %><br>
-            <%= link_to "View this Auction!", auction_path(j) %><br>
-            
-
-              <br>
-           <% end %>    
-          </div>
+   
+    <div class="whole-left">
+      <div class="img-left">
         
- 
-      </div>        
+        <img src="http://cdn4.scdlifestyle.com/wp-content/uploads/2014/04/hourglass.jpg" alt="Klematis" width="150" height="800">
+       
+
+      </div>    
     </div>
- 
+    
+    <div class="whole-right">
+      <div class="img-right">
+       
+        <img src="http://cdn4.scdlifestyle.com/wp-content/uploads/2014/04/hourglass.jpg" alt="Klematis" width="150" height="800">
+
+      </div>
+    </div> 
   </div>
 
 
+   
+     
+
+  <br>
+  <br>
+  <br>
 
 
- <div class="buttons2">
-    <span class="cash-button">
-       <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
-    </span>
-    <span class="dashboard-button">
-     <%= link_to "Dashboard", dashboard_path, :method => :get %>
-    </span>  
-  </div>
+      <div class="joke_index_container">   
+        <div class="row">  
+          <div class="index_title"> 
+            <h1 id="index_title">LIVE AUCTIONS</h1>
+          </div>
+          <br>
+          <br>
+
+          <% @auctions.each do |j| %>
+            <div class="thumbs">
+              <strong>Amount:</strong> $<%= j.amount %><br>
+              <strong>Category:</strong> <%= j.category %><br>
+              <strong>Time Remaining:</strong> <%= ((j.created_at.to_i) - Time.now.to_i) %>
+              <br>
+              <%= button_to "VIEW AUCTION!", auction_path(j), :method => :get  %><br>
+                <br>
+             </div>
+             <% end %>    
+           
+          
+   
+        </div>        
+    </div>
+</div>
+
+
+
+
+
