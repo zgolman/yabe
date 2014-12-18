@@ -12,8 +12,6 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'font-awesome-rails', '~> 4.2.0.0'
 
-gem 'better_errors', '~> 2.0.0'
-
 #Add factory girl
 gem 'factory_girl_rails'
 
@@ -24,6 +22,10 @@ group :development, :test do
   gem 'rspec-rails'
 
   gem 'pry-byebug'
+
+  gem 'binding_of_caller'
+
+  gem 'better_errors', '~> 2.0.0'
 
 # TESTING shoulds tools
   gem 'shoulda-matchers', require: false

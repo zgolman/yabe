@@ -1,0 +1,61 @@
+<div class = "dash">
+  <div class="your-dashboard">
+	 <h1>WELCOME TO YOUR DASHBOARD</h1>
+  </div>
+
+  <div class="current-auctions">
+	 <h2>Current Auctions</h2>
+  </div>
+	<% @auctions.each do |j| %>
+          <div class="view-auction">
+            <strong>Amount:</strong> $<%= j.amount %><br>
+            <strong>Category:</strong> <%= j.category %><br>
+            <strong>Time Remaining:</strong> $<%= j.amount %><br>
+            <div class="this-auction">
+              <%= link_to "View this Auction!", auction_path(j) %><br>
+            </div>
+	   		<br>
+            <% end %>    
+          </div>
+
+
+
+
+
+
+	
+<<<<<<< HEAD
+	  <div class="row">
+=======
+	  <div class="row">       
+            <h1 id="index_title">Current Bids</h1>
+            
+            <% if @photos.length > 1 %>
+            <div> seeing if there is a photo </div>
+            <% end %>
+>>>>>>> ZAch2
+
+            <% @photos.each do |j| %>
+                <div class="thumbs">
+                    <h2>Name:</h2> <h3><%= j.name %></h3><br> 
+                    <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
+                    <h2>Description:</h2> <h3><%= j.description %></h3><br> 
+                </div>
+            <% end %> 
+
+        </div> 
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+ <div class="buttons">
+    <span class="cash-button">
+       <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
+    </span>
+    <span class="shopping-button">
+       <%= link_to "Start Selling", auctions_path, :method => :get %>
+    </span>  
+  </div>

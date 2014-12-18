@@ -1,0 +1,48 @@
+
+
+<div class="auction_index_container">
+    <div class="container">
+      <div class="row">  
+        <div class="index_title"> 
+          <h1 id="index_title">AUCTIONS</h1>
+        </div>
+
+<% @auctions.each do |j| %>
+
+<% @timeleft.each do |x| %>
+          <div class="thumbs">
+            <strong>Amount:</strong> $<%= j.amount %><br>
+            <strong>Category:</strong> <%= j.category %><br>
+<<<<<<< HEAD
+            <strong>Time Remaining:</strong> <%= j.created_at.to_i  %><br>
+            <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
+            Time Remaining: <%= (x/60/60).to_i %> hrs <%= Time.at(x).strftime "%M:%S" %>
+=======
+            <strong>Time Remaining:</strong> <%= ((j.created_at.to_i) - Time.now.to_i) %><br>
+>>>>>>> samantha
+            <%= link_to "View this Auction!", auction_path(j) %><br>
+            
+
+              <br>
+           <% end %>    
+        <% end %>
+          </div>
+        
+ 
+      </div>        
+    </div>
+ 
+  </div>
+
+
+
+
+ <div class="buttons2">
+    <span class="cash-button">
+       <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
+    </span>
+    <span class="dashboard-button">
+     <%= link_to "Dashboard", dashboard_path, :method => :get %>
+    </span>  
+  </div>
+

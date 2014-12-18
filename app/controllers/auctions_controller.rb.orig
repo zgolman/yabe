@@ -17,7 +17,7 @@ class AuctionsController < ApplicationController
     respond_to do |format|
 
     if @auction.save
-            Auction.create(:user_id => @user.id)
+            
 
             session[:user_id] = @user.id
             format.html { redirect_to @auction, notice: 'User was successfully created.' }
@@ -37,15 +37,21 @@ end
   
     @auction.save
     @list = Photo.all 
-<<<<<<< HEAD
-=======
-    @timeleft = @auction.created_at.to_i - @auction.auction_period.to_i
 
->>>>>>> 42c27e4d38d702e5aef03cb121e6afe9ca25a1f3
+    @timeleft = @auction.created_at.to_i - @auction.auction_period.to_i
 
     
     @photo = Photo.new
+<<<<<<< HEAD
+    # @auctionPhotos = Photo.where(auction_id: @auction.id)
+    # @photo.save
+
+
+=======
     @photos = @auction.photos
+>>>>>>> master
+
+    @current_user = current_user
     # @auctionPhotos = Photo.where(auction_id: @auction.id)
     # @photo.save
 
@@ -71,9 +77,16 @@ end
 
 private
     # Never trust parameters from the scary internet, only allow the white list through.
+<<<<<<< HEAD
+  	def auction_params
+      params.require(:auction).permit(:amount, :auction_period, :category, :user_id)
+  	end
+   
+=======
     def auction_params
       params.require(:auction).permit(:amount, :auction_period, :category, :user_id)
     end
     
+>>>>>>> master
 end
   

@@ -44,6 +44,8 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    binding_of_caller (0.7.3.pre1)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
     builder (3.1.4)
@@ -64,6 +66,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.8.9)
+    debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -201,6 +204,7 @@ DEPENDENCIES
   aws-sdk (~> 1.20.0)
   bcrypt (~> 3.1.7)
   better_errors (~> 2.0.0)
+  binding_of_caller
   bootstrap-sass (~> 3.3.1)
   coffee-rails (~> 4.0.0)
   factory_girl_rails

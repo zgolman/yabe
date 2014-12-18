@@ -20,6 +20,7 @@ class UsersController < ApplicationController
         @user= User.last
         @auctions = @user.auctions
         @photos = @user.photos
+        
     end
 
 
