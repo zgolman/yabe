@@ -56,19 +56,15 @@
 
     
 <script>
-    // var time = <%=raw @auction.created_at.to_i %>
+    //created_at unix time in Rails does not include milliseconds and needs to be converted
     var aucCreated = <%=raw (@auction.created_at.to_f * 1000).to_i %>
+    //Auction length that comes in the form of milliseconds
     var auctionLength = <%=raw (@auction.auction_period) %>
     console.log("auc length", auctionLength);
     console.log("when auc was created", aucCreated);
 
-    var test = new Date();
-    var testAgain = test.getTime();
-    console.log("current time", testAgain);
-
+    //timeLeft is the amount of time left until the Auction closes
     var timeLeft = (aucCreated+auctionLength) - testAgain;
-    var timeElasped = testAgain - aucCreated;
-    console.log(timeElasped);
     console.log("amt of time left", timeLeft);
 
 
@@ -79,11 +75,14 @@
      // Number of seconds to count down from.        
     // var eTime = sTime+(countDown * 1000);
     // console.log(eTime)
+
+    //Function to take out decimals
     Number.prototype.toFixedDown = function(digits) {
         var re = new RegExp("(\\d+\\.\\d{" + digits + "})(\\d)"),
             m = this.toString().match(re);
         return m ? parseFloat(m[1]) : this.valueOf();
     };
+    //Change the timeLeft to not include milliseconds
     var timeLeftAgain = (timeLeft/1000).toFixedDown(0);
     console.log(timeLeftAgain);
 
