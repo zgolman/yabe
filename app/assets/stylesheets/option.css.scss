@@ -1,26 +1,34 @@
 .yabe {
-  margin-top: -20px;
+  margin-top: 10px;
 }
 .logged-in {
-  margin-left: 900px;
-  margin-top: 10px;
+  margin-right: 900px;
   font-family: 'Open Sans', sans-serif;
   color: black;
 }
 
 .logged-in a {
   color: black;
+  margin-top: 10px;
 }
 
 .logout-link {
-  margin-top: 50px;
+  margin-left: 930px;
+  color: red;
+  // margin-left: 150px;
+}
+
+.logout-link a {
+  margin-top: 30px;
+  color: red;
 }
 
 .cash-button {
   border-radius: 100px;
-  margin-right: 350px;
+  
 }
 .cash-button a {
+  float:left;
 cursor: pointer;
 background: green;
 color: white;
@@ -45,16 +53,17 @@ transition: 200ms;
 width: 300px;
 height: 80px;
 font-size: 20px;
-margin-right: -300px;
+margin-right: 20px;
+margin-left: 260px;
 
 }
 
 .shopping-button {
   border-radius: 100px;
-  margin-right: 100px;
 }
 
 .shopping-button a {
+float:left;
 cursor: pointer;
 background: blue;
 color: white;
@@ -79,13 +88,15 @@ transition: 200ms;
 width: 300px;
 height: 80px;
 font-size: 20px;
+margin-right: 20px;
 }
 
 .dashboard-button {
-  border-radius: 100px;
+border-radius: 100px;
 
 }
 .dashboard-button a {
+float:left;
 cursor: pointer;
 background: red;
 color: white;
@@ -110,5 +121,16 @@ transition: 200ms;
 width: 300px;
 height: 80px;
 font-size: 20px;
+margin-right: 20px;
 }
 
+.buttons{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 120%;
+
+
+
+
+}
