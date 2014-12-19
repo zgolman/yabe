@@ -2,7 +2,7 @@ Yabe::Application.routes.draw do
   
 
   get 'signup', to: 'users#new', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
+  post 'login' => 'sessions#create', as: :session_create
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'option', to: 'users#option', as: 'option'
   get 'charges', to: 'charges#new', as: 'charges'
