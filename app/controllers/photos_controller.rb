@@ -27,7 +27,7 @@
       @photo = Photo.find(params[:id])
       # raise @photo.inspect
       if @photo.update_attributes(params.permit(:winner_id))
-        redirect_to auctions_path
+        redirect_to charges_path
       else
         render 'show'
       end
