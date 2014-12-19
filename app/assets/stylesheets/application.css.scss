@@ -98,12 +98,7 @@ body {
   border: none;
   zoom: 1;
 }
-.question {
-  padding-top: 50px;
-  text-align: center;
-  font-size: 50px;
-  font-family: 'Open Sans', sans-serif;
-}
+
 
 #myModalLabel1 {
   font-size: 30px;
@@ -174,6 +169,7 @@ text-align: right;
 font-size: 20px;
 color: white;
 z-index: 50;
+background-color: black;
 
 }
 
@@ -184,7 +180,7 @@ text-decoration: none;
 }
 
 #cssmenu a:hover {
-color: black;
+color: white;
 } 
 
 #cssmenu ul{
@@ -219,7 +215,7 @@ color: black;
     height: 0;
     border-width: 0px;
     border-style: solid;
-    border-color: rgba(0,0,0,0.8);
+    border-color: rgba(0,0,0,0.5);
     background-color: rgba(0,0,0,0.3);
     transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
 }
@@ -262,7 +258,7 @@ color: black;
     // background-color: #fff;
     font-size: 0px;
     user-select: none;
-    background-color: black;
+    background-color: white;
     // transition: background-color 0.3s;
 }
 
@@ -281,7 +277,7 @@ color: black;
     background: #fff;
     content: '';
     transition: transform 0.3s;
-    background-color: black;
+    background-color: white;
 }
 
 .bt-menu-trigger span:before {
@@ -384,10 +380,7 @@ color: black;
     }
 }
 
-.cash-button {
-  
-  
-}
+
 .cash-button a {
 cursor: pointer;
 color: white;
@@ -400,9 +393,7 @@ vertical-align: baseline;
 font-size: 20px;
 }
 
-.shopping-button {
- 
-}
+
 
 .shopping-button a {
 cursor: pointer;
@@ -417,9 +408,6 @@ font-size: 20px;
 margin-top: 90px;
 }
 
-.dashboard-button {
-}
-
 .dashboard-button a {
 cursor: pointer;
 color: white;
@@ -432,3 +420,4 @@ vertical-align: baseline;
 font-size: 20px;
 margin-top: 100px;
 }
+
