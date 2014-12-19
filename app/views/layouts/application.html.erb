@@ -37,19 +37,20 @@
      </li>
      <% else %>
      <li>
-        <a href="">Welcome, <%= current_user.email %>!</a> 
+        <a href="current_user">Welcome, <%= current_user.email %>!</a> 
      </li>
      <li>
-        <%= link_to "Log Out", logout_path %>
+          <%= link_to "Log Out", logout_path %>
+        </a>
      </li>
      <%end%>
   </ul>
 </div>
 
 <nav id="bt-menu" class="bt-menu">
-    <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+    <a href="#" class="bt-menu-trigger"><span style="color:black">Menu</span></a>
     <div class="buttons" style="display: block ;position: fixed;left: 25px;top: -45px;">
-      <span class="cash-button">
+      <span class="cash-button" >
        <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
       </span>
       <span class="shopping-button">
@@ -157,6 +158,8 @@ if ( typeof define === 'function' && define.amd ) {
         return check;
     }
  
+ $('.buttons').toggle();
+
 $('.bt-menu-trigger').on('click', function(){
   
   $('.buttons').toggle();
@@ -206,7 +209,7 @@ $('.bt-menu-trigger').on('click', function(){
       <% flash.each do |name,msg| %>
      
       <% end %>
-<!-- </div> -->
+ </div> 
 
 <%= yield %>
 

@@ -20,11 +20,7 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 
 body {
-  font-family: AvenirLTStd-Medium, "Helvetica", sans-serif;
-  background-color: white;
-  background-repeat: no-repeat;
-  background-size: 500px;
-  margin-bottom: 800px;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -57,21 +53,12 @@ body {
 
 .yabe {
   margin-top: 40px;
+  margin-left: 80px;
 }
 
 .open-modal {
   color: black;
-}
-
-.logout-link {
-  // margin-right: 5px;
-  // margin-top: 30px;
-  color: red;
-  // margin-top: 5px;
-}
-
-.logout-link a {
-  color: red;
+  font-size: 20px;
 }
 
 .new-auction-title {
@@ -90,14 +77,12 @@ body {
   left: 0px;
   width: 100%;
   height: 100%;
-  z-index: -100;
-
-  
 }
 
 .buttons {
  margin-left: 350px;
  margin-top: 150px;
+ padding-top: 10px;
 }
 
 
@@ -182,26 +167,27 @@ body {
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 #cssmenu {
-// position: fixed;
-// top: 0;
-padding-top: 30px;
-color: #ffffff;
+// background-color: white;
+margin-bottom: 100px;
+padding-top: 40px;
 text-align: right;
-color: rgba(1, 1, 1, 0.8);
+font-size: 20px;
+color: white;
+z-index: 50;
+
 }
 
 #cssmenu a {
-font-size: 17px;
+font-size: 20px;
 color: white;
 text-decoration: none;
 }
 
 #cssmenu a:hover {
-color: white;
+color: black;
 } 
 
 #cssmenu ul{
-  // top: -30px;
   margin-left: 50px;
   padding: 0;
   list-style-type: none;
@@ -211,18 +197,15 @@ color: white;
   display: inline; 
   padding-left: 25px;
   padding-right: 15px;
-  // font-size: 30px;
+  color: white;
+  font-size: 20px;
 }
-
 
 #index_title {
   text-align: center;
    background-position: right -121px;
 }
 
-body  {
-    background: white;
-}
  
 .container {
     padding: 80px;
@@ -230,20 +213,20 @@ body  {
 
 .bt-menu {
     position: fixed;
-    top: 30px;
+    top: 70px;
     left: 0;
     width: 100%;
     height: 0;
     border-width: 0px;
     border-style: solid;
-    border-color: #333;
-    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.3);
     transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
 }
 .bt-menu.bt-menu-open {
     height: 100%;
-    border-width: 30px 30px 30px 90px;
-    background-color: rgba(0,0,0,0.3);
+    border-width: 0px 0px 0px 250px;
+    background-color: rgba(0, 0, 0, 0.3);
     transition: border-width 0.3s, background-color 0.3s;
 }
 
@@ -264,6 +247,8 @@ body  {
     width: 50px;
     height: 50px;
     cursor: pointer;
+    color: black;
+    text-decoration: none;
 }
  
 .bt-menu-trigger span {
@@ -274,15 +259,17 @@ body  {
     width: 100%;
     height: 4px;
     margin-top: -2px;
-    background-color: #fff;
+    // background-color: #fff;
     font-size: 0px;
     user-select: none;
+    background-color: black;
     // transition: background-color 0.3s;
 }
 
 .bt-menu-open .bt-menu-trigger span {
     background-color: transparent;
     top: 20px;
+    
 }   
 
 .bt-menu-trigger span:before,
@@ -294,22 +281,27 @@ body  {
     background: #fff;
     content: '';
     transition: transform 0.3s;
+    background-color: black;
 }
 
 .bt-menu-trigger span:before {
     transform: translateY(-250%);
+    color: black;
 }
  
 .bt-menu-trigger span:after {
     transform: translateY(250%);
+    color: black;
 }
 
 .bt-menu-open .bt-menu-trigger span:before {
     transform: translateY(0) rotate(45deg);
+    color: black;
 }
  
 .bt-menu-open .bt-menu-trigger span:after {
     transform: translateY(0) rotate(-45deg);
+    color: black;
 }
 
 .bt-menu ul {
@@ -321,13 +313,16 @@ body  {
     width: 90px;
     list-style: none;
     backface-visibility: hidden;
+    color: black;
 }
 
 .bt-menu ul li,
 .bt-menu ul li a {
     display: block;
     width: 100%;
+    padding: 10px;
     text-align: center;
+    color: black;
 }
 
 .bt-menu ul li {
@@ -361,7 +356,7 @@ body  {
     visibility: visible;
     opacity: 1;
     transition: transform 0.3s, opacity 0.3s;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0,0.3);
 }
 
 .bt-menu ul li a {
@@ -373,14 +368,14 @@ body  {
 }
 
 .bt-menu ul li a:before {
-    color: white;
+    color: black;
     font-size: 48px;
     transition: color 0.2s;
 }
 
 .bt-menu ul li a:hover:before,
 .bt-menu ul li a:focus:before  {
-    color: #fff;
+    color: black;
 }
 
 @media screen and (max-height: 31.125em) {
@@ -419,6 +414,7 @@ position: relative;
 display: block;
 vertical-align: baseline;
 font-size: 20px;
+margin-top: 90px;
 }
 
 .dashboard-button {
@@ -434,4 +430,5 @@ position: relative;
 display: block;
 vertical-align: baseline;
 font-size: 20px;
+margin-top: 100px;
 }
