@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+.your-dashboard {
+  font-size: 40px;
+  margin-top: -10px;
+  margin-right: 10%;
+}
+
+.current-auctions {
+  margin-right: 80%;
+}
+
+.view-auction {
+  font-size: 20px;
+  margin-left: -40%;
+  margin-top: 60px;
+}
+
+.this-auction a {
+  color: red;
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.sand-clock {
+  background-image: url(http://www.hackathonbd.com/wp-content/uploads/2014/02/18713_miscellaneous_sand_clock.jpg);
+  position: fixed;
+  overflow: none;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  // opacity: 0.2;
+}
+
+=======
+>>>>>>> soutchay

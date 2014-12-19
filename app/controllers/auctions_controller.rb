@@ -9,6 +9,7 @@ class AuctionsController < ApplicationController
          seconds: (((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)%60)})
       end
     end
+
   end
 
   def new
