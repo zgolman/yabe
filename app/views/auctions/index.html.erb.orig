@@ -1,8 +1,11 @@
 <br>
 <div class="whole">
   <div class="auction_index_container">
+<<<<<<< HEAD
 <strong>THIS IS THE ONE LOGGED IN<%= @current_user %></strong>
    
+=======
+>>>>>>> ZAch2
     <div class="whole-left">
       <div class="img-left">
         <img src="http://cdn4.scdlifestyle.com/wp-content/uploads/2014/04/hourglass.jpg" alt="Klematis" width="150" height="800">
@@ -49,3 +52,14 @@
 
 
 
+<<<<<<< HEAD
+ <div class="buttons2">
+    <span class="cash-button">
+       <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
+    </span>
+    <span class="dashboard-button">
+     <%= link_to "Dashboard", dashboard_path, :method => :get %>
+    </span>  
+  </div>
+=======
+>>>>>>> ZAch2
