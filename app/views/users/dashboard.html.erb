@@ -6,6 +6,7 @@
   <div class="current-auctions">
 	 <h2>Current Auctions</h2>
   </div>
+<br>
 
 	<% @auctions.each do |j| %>
           <div class="Dthumbs">
@@ -16,19 +17,19 @@
 	   		  <br>
             </div>
             <% end %>    
-    
-          
 
-	
-
-	  
-
-
+<br>
+<br>
+<br>
+<br>
+	<div class="current-auctions">
+   <h2>Current Listings</h2>
+  </div>
             <% @photos.each do |j| %>
                 <div class="Pthumbs">
-                    <h2>Name:</h2> <h3><%= j.name %></h3><br> 
+                    <h3><%= j.name %></h3><br> 
                     <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
-                    <h2>Description:</h2> <h3><%= j.description %></h3><br> 
+                    </h2> <h3><%= j.description %></h3><br> 
                 </div>
             <% end %> 
 
@@ -36,7 +37,4 @@
 
 
 </div>
-<br>
-<br>
-<br>
-<br>
+

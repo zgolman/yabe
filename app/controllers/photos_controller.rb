@@ -12,7 +12,7 @@
       @user.photos << Photo.new(photo_params)
       # Attach this criterion to a decision
       if @user.save
-        redirect_to auctions_path
+        redirect_to auction_path(Photo.last.auction_id)
       else
         render 'new'
       end

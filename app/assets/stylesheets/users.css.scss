@@ -26,5 +26,31 @@
 
 .Pthumbs{
 	float: left;
-	
+	width: 340px;
+}
+
+.your-dashboard {
+  font-size: 40px;
+  margin-top: -10px;
+  margin-right: 20%;
+}
+
+.current-auctions {
+  margin-right: 10%;
+  color: blue;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 48px;
+
+}
+
+.view-auction {
+  font-size: 20px;
+  margin-left: -40%;
+  margin-top: 60px;
+}
+
+.this-auction a {
+  color: red;
+  font-size: 35px;
+  text-decoration: none;
 }
