@@ -1,7 +1,7 @@
 <script src='/assets/auctions.js'></script>
 <br>
 <br>
-
+<%= @current_user.id %>
 
 
 <br>
@@ -12,6 +12,8 @@
 
 
 <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
+
+
 </div>
 <br>
 
@@ -50,20 +52,24 @@
 </div>
 
    
-            <div class="row">       
-                <h1 id="index_title">Current Bids</h1>
+<div class="row">       
+    <h1 id="index_title">Current Bids</h1>
 
-                <% @photos.each do |j| %>
-                    <div class="thumbs">
-                     
-                        <h2>Name:</h2> <h3><%= j.name %></h3><br> 
-                        <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
-                        <h2>Description:</h2> <h3><%= j.description %></h3><br> 
-                    </div>
-                <% end %> 
+    <% @photos.each do |j| %>
+        <div class="thumbs">
+         
+            <h2>Name:</h2> <h3><%= j.name %></h3><br> 
+            <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
+            <h2>Description:</h2> <h3><%= j.description %></h3><br> 
+            <% if current_user.id === @auction.user_id %>
+            <button><%= link_to "Choose this Product", update_photo_path(j.id, winner_id: current_user.id), method: :patch %></button>
+            <% end %>
+        </div>
+        
+    <% end %> 
 
-            </div>              
-   
+</div>              
+
 
 </div>
   <div class="buttons3">
@@ -85,43 +91,43 @@
   </div> 
 
     
-    <script>
+<script>
+
     // var time = <%=raw @auction.created_at.to_i %>
     var aucCreated = <%=raw (@auction.created_at.to_f * 1000).to_i %>
-    var auctionLength = <%=raw (@auction.auction_period) %>
+    var auctionLength = <%=raw (@auction.auction_period) %>;
     console.log("auc length", auctionLength);
     console.log("when auc was created", aucCreated);
-    var test = new Date();
-    var testAgain = test.getTime();
+    
+    var testAgain = <%=raw (Time.now.to_f*1000).to_i %>
     console.log("current time", testAgain);
+
     var timeLeft = (aucCreated+auctionLength) - testAgain;
     var timeElasped = testAgain - aucCreated;
     console.log(timeElasped);
-    console.log("amt of time left", timeLeft);
+
+
     var sTime = new Date().getTime();
-    console.log("what");
-    //countDown is the time left of the auction
-    var countDown = 3600;
-     // Number of seconds to count down from.        
-    // var eTime = sTime+(countDown * 1000);
-    // console.log(eTime)
+
+    //Function to truncate the milliseconds out for the countdown view
     Number.prototype.toFixedDown = function(digits) {
         var re = new RegExp("(\\d+\\.\\d{" + digits + "})(\\d)"),
             m = this.toString().match(re);
         return m ? parseFloat(m[1]) : this.valueOf();
     };
-    var timeLeftAgain = (timeLeft/1000).toFixedDown(0);
-    console.log(timeLeftAgain);
- 
+
+    <% if current_page?(auction_path) %>
+
     function UpdateCountDownTime() {
+        console.log('this is still runnin');
         var cTime = new Date().getTime();
-        console.log('this is running still');
         var diff = cTime - sTime;
         // var diff =
         var timeStr = '';
         // diff is the time to start counting down from
         var seconds = timeLeftAgain - Math.floor(diff/1000);
-        if (seconds >= 0) {
+        console.log('seconds', seconds, "time left", timeLeftAgain);
+        if (seconds > 0) {
             var hours = Math.floor(seconds / 3600);
             var minutes = Math.floor( (seconds-(hours*3600)) / 60);
             seconds -= (hours*3600) + (minutes*60);
@@ -142,12 +148,26 @@
             }
             // console.log(seconds)
             document.getElementById("countdowntimertxt").innerHTML = timeStr;
-        }else{
+        }
+        else{
             document.getElementById("countdowntimertxt").style.display="none";
             clearInterval(counter);
         }
     }
-    UpdateCountDownTime();
+    <% end %>
+
+    //If no time left, do not define timeLeftAgain
+    if (timeLeft >0){
+        var timeLeftAgain = (timeLeft/1000).toFixedDown(0);
+        console.log(timeLeftAgain);
+        UpdateCountDownTime();
+    }
+    else {
+        var timeLeftAgain = 0;
+    }
     //every .5 seconds run UpdateCountDownTime to display the clock
     var counter = setInterval(UpdateCountDownTime, 500);
-    </script>
+
+
+</script>
+

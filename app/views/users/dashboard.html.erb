@@ -6,36 +6,33 @@
   <div class="current-auctions">
 	 <h2>Current Auctions</h2>
   </div>
+
 	<% @auctions.each do |j| %>
-          <div class="view-auction">
-            <strong>Amount:</strong> $<%= j.amount %><br>
-            <strong>Category:</strong> <%= j.category %><br>
-            <strong>Time Remaining:</strong> $<%= j.amount %><br>
-            <div class="this-auction">
-              <%= link_to "View this Auction!", auction_path(j) %><br>
+          <div class="Dthumbs">
+            <img src = "http://www.clipartbest.com/cliparts/eTM/dzG/eTMdzGRrc.png" width="20" height="20"> $<%= j.amount %><br>
+            <img src = "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Astronomical_symbol_for_star.svg/120px-Astronomical_symbol_for_star.svg.png"width="20" height="20"><%= j.category %><br>
+            <img src = "http://images.clipartpanda.com/alarm-clock-png-orologio_clock_alarm_icon-1331px.png" width="20" height="20"><%= @timeleft[j.id-1][:hours] %> hours <%= @timeleft[j.id-1][:minutes] %> minutes <%= @timeleft[j.id-1][:seconds] %> seconds <br>
+            <%= button_to "View this Auction!", auction_path(j), :method => :get %><br>
+	   		  <br>
             </div>
-	   		<br>
             <% end %>    
-          </div>
-
-
-<div class="sand-clock">
-</div
-
-
+    
+          
 
 	
-	  <div class="row">
+
+	  
+
 
             <% @photos.each do |j| %>
-                <div class="thumbs">
+                <div class="Pthumbs">
                     <h2>Name:</h2> <h3><%= j.name %></h3><br> 
                     <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
                     <h2>Description:</h2> <h3><%= j.description %></h3><br> 
                 </div>
             <% end %> 
 
-        </div> 
+        
 
 
 </div>
@@ -43,11 +40,3 @@
 <br>
 <br>
 <br>
- <div class="buttons">
-    <span class="cash-button">
-       <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
-    </span>
-    <span class="shopping-button">
-       <%= link_to "Start Selling", auctions_path, :method => :get %>
-    </span>  
-  </div>

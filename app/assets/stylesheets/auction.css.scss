@@ -56,6 +56,8 @@
 	margin-top: 10px;
 }
 
+
+
 .details{
 	font-size: 40px;
 	margin-left: 35%;
@@ -63,6 +65,89 @@
 
 .bid{
 	margin-left: 40%;
+}
+
+///Auctions Index Page
+
+
+
+.whole{
+	// background-color: #e2f9f8;
+}
+
+.whole-left{
+	// background-color: #222222;
+	width:200px;
+  height: 1000px;
+	float: left;
+	margin-top: 97px;
+	margin-left: -150px;
+}
+
+.whole-right{
+	// background-color: #222222;
+	width:200px;
+  height: 1000px;
+	float: right;
+	margin-top: 97px;
+	margin-right: -120px;
+}
+
+
+div.img-left {
+    margin: 0 auto;
+    padding-left: 17px;
+    padding-top: 20px;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+
+div.img-left img {
+    display: inline;
+    margin: 5px;
+    // border: 1px solid #ffffff;
+}
+
+div.img-right {
+    margin: 0 auto;
+    padding-right: 17px;
+    padding-top: 15px;
+    height: auto;
+    width: auto;
+    float: right;
+    text-align: center;
+}
+
+div.img-right img {
+    display: inline;
+    margin: 5px;
+    // border: 1px solid #ffffff;
+}
+
+
+.auction_index_container{
+	width: 1000px;
+
+	max-width: none !important;
+	margin: 0 auto;
+
+	// background-color: #F0F0F0;
+}
+.thumbs{
+	float: left;
+	width: 340px;
+	text-align: center;
+	margin-top: 10px;
+	display: inline;
+	zoom: 1.25;
+}
+#index_title{
+	text-align: center;
+	color: blue;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 48px;
 }
 
 .index_title {
