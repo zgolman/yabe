@@ -16,8 +16,9 @@ class UsersController < ApplicationController
     end
 
     def dashboard
+        current_id = current_user[:id]
+        @user= User.find_by id: current_id
         
-        @user= User.last
         @auctions = @user.auctions
         @photos = @user.photos
         
