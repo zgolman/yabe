@@ -1,15 +1,13 @@
 <script src='/assets/auctions.js'></script>
 <br>
 <br>
-<%= @current_user.id %>
+<div class="sand-clock-auction-show"></div>
 
 
 <br>
 <div class = "details">
 <strong>Amount:</strong> $<%= @auction.amount %><br>
 <strong>Category:</strong> <%= @auction.category %><br>
-
-
 
 <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
 
@@ -51,18 +49,24 @@
     </div>
 </div>
 
-   
-<div class="row">       
-    <h1 id="index_title">Current Bids</h1>
-
+    <div class="row">
+    
     <% @photos.each do |j| %>
         <div class="thumbs">
-         
-            <h3><%= j.name %></h3><br> 
-            <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
-           <h3><%= j.description %></h3><br> 
+            <div class="name">
+                <h3><%= j.name %></h3><br> 
+            </div>
+
+            <div class="image">
+                <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
+            </div>
+            <div class="description">
+                <h3><%= j.description %></h3><br> 
+            </div>
             <% if current_user.id === @auction.user_id %>
-            <%= button_to "Choose this Product", update_photo_path(j.id, winner_id: current_user.id), method: :patch %></button>
+            <div class="choose-product">
+                <%= button_to "Choose this Product", update_photo_path(j.id, winner_id: current_user.id), method: :patch %></button>
+            </div>
             <% end %>
         </div>
         
@@ -71,9 +75,6 @@
 </div>              
 
 
-
-
-    
 <script>
 
     // var time = <%=raw @auction.created_at.to_i %>

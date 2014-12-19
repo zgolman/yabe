@@ -34,19 +34,28 @@
 }
 
 .auction-period {
-  margin-left: 330px;
+  margin-top: 20px;
+  margin-left: 320px;
   font-size: 40px;
   font-family: 'Open Sans', sans-serif;
 }
 
+.time {
+  margin-left: 650px;
+  margin-top: -40px;
+  
+}
 .category {
-  margin-left: 330px;
+  margin-left: 310px;
+  margin-top: 30px;
   font-size: 40px;
   font-family: 'Open Sans', sans-serif;
 }
 
 #investment {
   font-size: 25px;
+  margin-left: 500px;
+  margin-top: -45px;
 }
 
 .thumbs{
@@ -61,7 +70,7 @@ text-align: center;
 margin: .9em 0;
 float: right;
 display: inline;
-font-size: 30px;
+font-size: 45px;
 text-transform: uppercase;
 padding: 1em;
 width: 100%;
@@ -69,24 +78,47 @@ border: none;
 white-space: nowrap;
 }
 
+.choose-product a {
+  margin-top: -20px;
+  background-color: blue;
+}
+
+.name {
+  margin-top: -20px;
+}
+
 .details{
-	font-size: 40px;
+	font-size: 30px;
 	margin-left: 35%;
+  margin-top: -130px;
 }
 
-.bid{
-	margin-left: 40%;
+.countdowntimer {
+  margin-left: 270px;
+  margin-top: -40px;
 }
-
+.current-bids {
+  margin-right: 1000px;
+}
 ///Auctions Index Page
 
 .amount {
-  margin-left: 20px;
+  // margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 600px;
+  margin-top: -30px;
+}
+
+.amount-field {
+  font-size: 40px;
+  margin-left: 500px;
+  margin-top: -65px;
 }
 
 .whole{
 	// background-color: #e2f9f8;
 }
+
 
 .whole-left{
 	// background-color: #222222;
@@ -170,14 +202,13 @@ div.img-right img {
 }
 
 
-.key {
-	font-size: 30px;
+.bid{
+  margin-left: 35%;
 }
 
 .bid a {
-	color: white;
+	color: black;
 	text-decoration: none;
-	background-color: black;
 	border: none;
 	outline: none;
 	webkit-border-radius: 5px;
@@ -206,6 +237,17 @@ div.img-right img {
   opacity: 0.5;
 }
 
+.sand-clock-auction-show {
+  background-image: url(http://www.hackathonbd.com/wp-content/uploads/2014/02/18713_miscellaneous_sand_clock.jpg);
+  position: fixed;
+  overflow: none;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  opacity: 0.5;
+}
 .sand-clock-new-auction {
   background-image: url(http://www.hackathonbd.com/wp-content/uploads/2014/02/18713_miscellaneous_sand_clock.jpg);
   position: fixed;

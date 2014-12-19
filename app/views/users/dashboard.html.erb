@@ -2,13 +2,13 @@
   <div class="your-dashboard">
 	 <h1>WELCOME TO YOUR DASHBOARD</h1>
   </div>
-  <div class="sand-clock-dashboard"></div>å
+  <div class="sand-clock-dashboard"></div>
   <div class="current-auctions">
 	 <h2>Current Auctions</h2>
   </div>
 <br>
-
-	<% @auctions.each do |j| %>
+  <div class="auction-list">
+	 <% @auctions.each do |j| %>
           <div class="Dthumbs">
             <img src = "http://www.clipartbest.com/cliparts/eTM/dzG/eTMdzGRrc.png" width="20" height="20"> $<%= j.amount %><br>
             <img src = "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Astronomical_symbol_for_star.svg/120px-Astronomical_symbol_for_star.svg.png"width="20" height="20"><%= j.category %><br>
@@ -16,18 +16,21 @@
             <%= button_to "View this Auction!", auction_path(j), :method => :get %><br>
 	   		  <br>
             </div>
+  </div>
             <% end %>    
 
 <br>
 <br>
 <br>
 <br>
-	<div class="current-auctions">
-   <h2>Current Listings</h2>
+	<div class="current-listings">
+    <h2>Current Listings</h2>
   </div>
             <% @photos.each do |j| %>
                 <div class="Pthumbs">
-                    <h3><%= j.name %></h3><br> 
+                    <div class="name2">
+                      <h3><%= j.name %></h3><br> 
+                    </div>
                     <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
                     </h2> <h3><%= j.description %></h3><br> 
                 </div>
