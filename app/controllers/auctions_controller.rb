@@ -6,7 +6,8 @@ class AuctionsController < ApplicationController
       @auctions.each do |j|
         @timeleft.push({hours:((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)/60/60,
          minutes: (((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)/60%60),
-         seconds: (((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)%60)})
+         seconds: (((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)%60),
+         unix_time: (j.created_at.to_i + (j.auction_period/1000) - Time.now.to_i)})
       end
     end
 

@@ -32,7 +32,12 @@
             <img src = "http://www.clipartbest.com/cliparts/eTM/dzG/eTMdzGRrc.png" width="20" height="20"> <%= j.amount %><br>
             <img src = "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Astronomical_symbol_for_star.svg/120px-Astronomical_symbol_for_star.svg.png"width="20" height="20"><%= j.category %><br>
             <img src = "http://images.clipartpanda.com/alarm-clock-png-orologio_clock_alarm_icon-1331px.png" width="20" height="20">
-            <%= @timeleft[j.id-1][:hours] %> hours <%= @timeleft[j.id-1][:minutes] %> minutes <%= @timeleft[j.id-1][:seconds] %> seconds <br>
+            
+            <% if @timeleft[j.id-1][:unix_time] > 0 %>
+              <%= @timeleft[j.id-1][:hours] %> hours <%= @timeleft[j.id-1][:minutes] %> minutes <%= @timeleft[j.id-1][:seconds] %> seconds <br>
+            <% else %>
+              Auction is Over!
+            <% end %>
             <%= button_to "View this Auction!", auction_path(j), :method => :get %><br>
             <br>
             </div>
