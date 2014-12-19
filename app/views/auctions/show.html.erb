@@ -1,7 +1,7 @@
 <script src='/assets/auctions.js'></script>
 <br>
 <br>
-
+<%= @current_user.id %>
 
 
 <br>
@@ -52,20 +52,25 @@
 </div>
 
    
-            <div class="row">       
-                <h1 id="index_title">Current Bids</h1>
+<div class="row">       
+    <h1 id="index_title">Current Bids</h1>
 
-                <% @photos.each do |j| %>
-                    <div class="thumbs">
-                     
-                        <h2>Name:</h2> <h3><%= j.name %></h3><br> 
-                        <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
-                        <h2>Description:</h2> <h3><%= j.description %></h3><br> 
-                    </div>
-                <% end %> 
+    <% @photos.each do |j| %>
+        <div class="thumbs">
+         
+            <h2>Name:</h2> <h3><%= j.name %></h3><br> 
+            <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
+            <h2>Description:</h2> <h3><%= j.description %></h3><br> 
+            <% if current_user.id === @auction.user_id %>
+            <button></button>
+            <% end %>
+            <%= link_to "Choose this Product", update_photo_path(j.id, winner_id: current_user.id), method: :patch %>
+        </div>
+        
+    <% end %> 
 
-            </div>              
-   
+</div>              
+
 
 </div>
   <div class="buttons3">

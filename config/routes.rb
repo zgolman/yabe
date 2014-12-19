@@ -8,6 +8,7 @@ Yabe::Application.routes.draw do
   get 'charges', to: 'charges#new', as: 'charges'
   get 'dashboard', to: 'users#dashboard', as: 'dashboard'
   post 'photo' => "photos#create", as: :photo_create
+  patch 'photo/:id' => "photos#update", as: :update_photo
 
   get 'home', to: 'users#home', as: 'home'
   resources :categories

@@ -22,9 +22,20 @@
 
       @photo = Photo.find(params[:id])
     end
-  
+
+    def update
+      @photo = Photo.find(params[:id])
+      # raise @photo.inspect
+      if @photo.update_attributes(params.permit(:winner_id))
+        redirect_to auctions_path
+      else
+        render 'show'
+      end
+    end
+    
+  private
     def photo_params
-      params.require(:photo).permit(:name, :image, :description, :auction_id)
+      params.require(:photo).permit(:name, :image, :description, :auction_id, :winner_id)
     end
   end
 
