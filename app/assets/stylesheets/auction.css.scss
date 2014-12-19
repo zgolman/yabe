@@ -45,6 +45,8 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+
+
 #investment {
   font-size: 20px;
 }
@@ -55,7 +57,17 @@
 	text-align: center;
 	margin-top: 10px;
 }
-
+.selected{
+	border: solid 5px red;
+	float: left;
+	width: 240px;
+	text-align: center;
+	margin-top: 10px;
+	border-radius: 50%;
+    transition:all 1s;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+}
 
 
 .details{
