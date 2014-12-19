@@ -37,7 +37,7 @@
      </li>
      <% else %>
      <li>
-        <a href="current_user">Welcome, <%= current_user.email %>!</a> 
+        <a><%= link_to "Welcome #{current_user.email}", root_path %></a> 
      </li>
      <li>
           <%= link_to "Log Out", logout_path %>

@@ -15,6 +15,7 @@ gem 'font-awesome-rails', '~> 4.2.0.0'
 #Add factory girl
 gem 'factory_girl_rails'
 
+gem 'unicorn'
 
 
 group :development, :test do
@@ -63,6 +64,7 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
