@@ -79,6 +79,7 @@
     console.log("current user", currentUser);
     var auctionUserId = <%= raw @auction.user_id %>;
     console.log("auction user id", auctionUserId);
+    // Check to see that the user logged in created the auction, if so allow photos to be selected
     if ( currentUser === auctionUserId) {
     $('.thumbs').click(function(){
         $('.thumbs.selected').removeClass('selected')
@@ -87,19 +88,11 @@
 }
 
 
-    // var button = document.getElementsByClassName('selectProduct')[0];
-    // var productItem = document.getElementsByClassName("thumbs");
-    // for (var i = 0; i < productItem.length; i++) (function(){
-    //     console.log('???');
-    //     button.addEventListener('click', function(){
-    //         console.log("clicked", i);
-    //     })
-    // });
 </script>
 
 <script>
 
-    // var time = <%=raw @auction.created_at.to_i %>
+    // In order to match Javascript function for displaying time, mult 1000
     var aucCreated = <%=raw (@auction.created_at.to_f * 1000).to_i %>
     var auctionLength = <%=raw (@auction.auction_period) %>;
     // console.log("auc length", auctionLength);

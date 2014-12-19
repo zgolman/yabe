@@ -1,6 +1,7 @@
 class AuctionsController < ApplicationController
   def index
     @auctions = Auction.all
+    # Create timeleft array of objects to display on index
     @timeleft = []
     if @auctions!=nil
       @auctions.each do |j|
