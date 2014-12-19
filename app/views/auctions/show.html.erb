@@ -62,9 +62,8 @@
             <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
             <h2>Description:</h2> <h3><%= j.description %></h3><br> 
             <% if current_user.id === @auction.user_id %>
-            <button></button>
+            <button><%= link_to "Choose this Product", update_photo_path(j.id, winner_id: current_user.id), method: :patch %></button>
             <% end %>
-            <%= link_to "Choose this Product", update_photo_path(j.id, winner_id: current_user.id), method: :patch %>
         </div>
         
     <% end %> 
