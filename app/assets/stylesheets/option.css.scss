@@ -27,7 +27,7 @@
 
 .buttons-option a {
   cursor: pointer;
-  color: black;
+  color: white;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
@@ -35,33 +35,46 @@
   display: block;
   vertical-align: baseline;
   font-size: 20px;
-  margin-top: 80px;
+  margin-top: 60px;
   text-align: center;
   display: block;
   cursor: pointer;
   text-transform: uppercase;
+  height: 50px;
+  width: 250px;
+  background-color: black;
+  opacity: 0.4;
+  margin-left: 500px;
+  text-align: center;
+  z-index: -1;
+
 }
 
-.buttons-option a:hover {
-  color: red;
-}
+
 
 .question {
-  padding-top: 20px;
+  padding-top: -10px;
   text-align: center;
   font-size: 50px;
   font-family: 'Open Sans', sans-serif;
+  z-index: -50;
 }
 
 .cash-button-option a {
- 
+  background-color: green;
+  padding-top: 10px;
+
 
 }
 .shopping-button-option a {
+  background-color: red;
+  padding-top: 10px;
 
 }
 
 .dashboard-button-option a {
+  background-color: blue;
+  padding-top: 10px;
  
 }
 
