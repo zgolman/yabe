@@ -56,7 +56,18 @@
 	margin-top: 10px;
 }
 
-
+.submit {
+text-align: center;
+margin: .9em 0;
+float: right;
+display: inline;
+font-size: 30px;
+text-transform: uppercase;
+padding: 1em;
+width: 100%;
+border: none;
+white-space: nowrap;
+}
 
 .details{
 	font-size: 40px;
@@ -143,15 +154,15 @@ div.img-right img {
 	display: inline;
 	zoom: 1.25;
 }
-#index_title{
+#index_title {
 	text-align: center;
-	color: blue;
-    text-shadow: 2px 2px 4px #000000;
-    font-size: 48px;
+	color: black;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 48px;
 }
 
 .index_title {
-	margin-top: -80px;
+	margin-top: -280px;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -177,7 +188,11 @@ div.img-right img {
 
 }
 
-.sand-clock {
+.new-auction-title {
+  margin-top: -200px;
+}
+
+.sand-clock-auction {
   background-image: url(http://www.hackathonbd.com/wp-content/uploads/2014/02/18713_miscellaneous_sand_clock.jpg);
   position: fixed;
   overflow: none;
@@ -186,5 +201,17 @@ div.img-right img {
   width: 100%;
   height: 100%;
   z-index: -100;
-  // opacity: 0.2;
+  opacity: 0.5;
+}
+
+.sand-clock-new-auction {
+  background-image: url(http://www.hackathonbd.com/wp-content/uploads/2014/02/18713_miscellaneous_sand_clock.jpg);
+  position: fixed;
+  overflow: none;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  opacity: 0.5;
 }

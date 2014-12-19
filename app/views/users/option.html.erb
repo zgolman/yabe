@@ -5,14 +5,14 @@
   <p>What would you like to do today?</p>
 </div>
 
-<div class="buttons">
-    <span class="cash-button">
-     <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
+<div class="buttons-option">
+    <span class="cash-button-option">
+      <%= link_to "Put up some CA$H", new_auction_path, :method => :get %>
     </span>
-    <span class="shopping-button">
+    <span class="shopping-button-option">
      <%= link_to "Start Selling", auctions_path, :method => :get %>
     </span>  
-   <span class="dashboard-button">
+   <span class="dashboard-button-option">
      <%= link_to "Your Dashboard", dashboard_path, :method => :get %>
    </span> 
 </div>  

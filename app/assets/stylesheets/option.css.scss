@@ -2,14 +2,8 @@
   margin-top: 10px;
 }
 
-#cssmenu a {
-font-size: 17px;
-color: black;
-text-decoration: none;
-}
 
-
-.buttons{
+.buttons {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -28,3 +22,59 @@ text-decoration: none;
   z-index: -100;
   opacity: 0.5;
 }
+
+
+
+.buttons-option a {
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  display: block;
+  vertical-align: baseline;
+  font-size: 20px;
+  margin-top: 60px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 50px;
+  width: 250px;
+  background-color: black;
+  opacity: 0.4;
+  margin-left: 500px;
+  text-align: center;
+  z-index: -1;
+
+}
+
+
+
+.question {
+  padding-top: -10px;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+  z-index: -50;
+}
+
+.cash-button-option a {
+  background-color: green;
+  padding-top: 10px;
+
+
+}
+.shopping-button-option a {
+  background-color: red;
+  padding-top: 10px;
+
+}
+
+.dashboard-button-option a {
+  background-color: blue;
+  padding-top: 10px;
+ 
+}
+
