@@ -59,7 +59,9 @@
             </div>
 
             <div class="image">
-                <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
+                <!-- Removed link to 'photos' page on image -->
+                <%= image_tag(j.image, size: "200x190") %>
+                <%#= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
             </div>
             <div class="description">
                 <h3><%= j.description %></h3><br> 
