@@ -1,15 +1,13 @@
 <script src='/assets/auctions.js'></script>
 <br>
 <br>
-<%= @current_user.id %>
+<div class="sand-clock-auction-show"></div>
 
 
 <br>
 <div class = "details">
 <strong>Amount:</strong> $<%= @auction.amount %><br>
 <strong>Category:</strong> <%= @auction.category %><br>
-
-
 
 <strong>Time Remaining:</strong><div id="countdowntimertxt" class="countdowntimer">00:00:00</div>
 
@@ -51,39 +49,64 @@
     </div>
 </div>
 
-   
-<div class="row">       
-    <h1 id="index_title">Current Bids</h1>
-
+    <div class="row">
+    
     <% @photos.each do |j| %>
+
         <div class="thumbs">
-         
-            <h3><%= j.name %></h3><br> 
-            <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
-           <h3><%= j.description %></h3><br> 
+            <div class="name">
+                <h3><%= j.name %></h3><br> 
+            </div>
+
+            <div class="image">
+                <%= link_to image_tag(j.image, size: "200x190"), photo_path(j) %>  
+            </div>
+            <div class="description">
+                <h3><%= j.description %></h3><br> 
+            </div>
             <% if current_user.id === @auction.user_id %>
-            <%= button_to "Choose this Product", update_photo_path(j.id, winner_id: current_user.id), method: :patch %></button>
+            <div class="choose-product">
+                <%= button_to "Choose this Product", update_photo_path(j.id, winner_id: current_user.id), method: :patch %></button>
+            </div>
             <% end %>
         </div>
         
     <% end %> 
 
 </div>              
+<script>
+    var currentUser = <%=raw current_user.id%>;
+    console.log("current user", currentUser);
+    var auctionUserId = <%= raw @auction.user_id %>;
+    console.log("auction user id", auctionUserId);
+    if ( currentUser === auctionUserId) {
+    $('.thumbs').click(function(){
+        $('.thumbs.selected').removeClass('selected')
+        $(this).addClass('selected');
+    });
+}
 
 
+    // var button = document.getElementsByClassName('selectProduct')[0];
+    // var productItem = document.getElementsByClassName("thumbs");
+    // for (var i = 0; i < productItem.length; i++) (function(){
+    //     console.log('???');
+    //     button.addEventListener('click', function(){
+    //         console.log("clicked", i);
+    //     })
+    // });
+</script>
 
-
-    
 <script>
 
     // var time = <%=raw @auction.created_at.to_i %>
     var aucCreated = <%=raw (@auction.created_at.to_f * 1000).to_i %>
     var auctionLength = <%=raw (@auction.auction_period) %>;
-    console.log("auc length", auctionLength);
-    console.log("when auc was created", aucCreated);
+    // console.log("auc length", auctionLength);
+    // console.log("when auc was created", aucCreated);
     
     var testAgain = <%=raw (Time.now.to_f*1000).to_i %>
-    console.log("current time", testAgain);
+    // console.log("current time", testAgain);
 
     var timeLeft = (aucCreated+auctionLength) - testAgain;
     var timeElasped = testAgain - aucCreated;
@@ -109,7 +132,7 @@
         var timeStr = '';
         // diff is the time to start counting down from
         var seconds = timeLeftAgain - Math.floor(diff/1000);
-        console.log('seconds', seconds, "time left", timeLeftAgain);
+        // console.log('seconds', seconds, "time left", timeLeftAgain);
         if (seconds > 0) {
             var hours = Math.floor(seconds / 3600);
             var minutes = Math.floor( (seconds-(hours*3600)) / 60);
@@ -142,7 +165,7 @@
     //If no time left, do not define timeLeftAgain
     if (timeLeft >0){
         var timeLeftAgain = (timeLeft/1000).toFixedDown(0);
-        console.log(timeLeftAgain);
+        // console.log(timeLeftAgain);
         UpdateCountDownTime();
     }
     else {

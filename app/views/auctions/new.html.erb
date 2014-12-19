@@ -6,24 +6,29 @@
 <br>
 <div class="sand-clock-new-auction"></div>
 <div class="new-auction-title">
-  <h1>PUT UP YOUR CASH<h1>
-    <h2> ...To See The Endless Possibilities </h2>
+  <h1>How Much Would You Like To Spend?<h1>
 </div>
-<div class="key">
+
   <% key=[['1 day', 86400000], ['5 min', 300000], ['30 min', 1800000], ['1 hour', 3600000], ['12 hours', 43200000], ['2 days', 172800000], ['5 days', 432000000], ['7 days', 604800000]] %>
-</div>
-<%= form_for @auction do |f| %>
+
+  <%= form_for @auction do |f| %>
 
   <div class="amount">
     <%= f.label :amount %>
+  </div>
+  <div class="amount-field">
     $<%= f.text_field :amount %>
   </div>
   <div class="auction-period">
     <%= f.label :auction_period %>
+  </div>
+  <div class="time">
     <%= f.select(:auction_period, options_for_select(key)) %>
+  </div>
   </div>  
- <div class="category">
+  <div class="category">
     <%= f.label :category%> 
+  </div>
    <div id="investment"> 
    <%= f.radio_button(:category, "Sporting Goods") %>
    <%= f.label(:category, "Sporting Goods") %>
@@ -36,8 +41,7 @@
    <%= f.radio_button(:category, "Suprise Me") %>
    <%= f.label(:category, "Surpise Me") %>
    </div>
- </div> 
-
+  </div> 
 
 
   <div class="submit"><%= f.submit "Submit" %></div>
