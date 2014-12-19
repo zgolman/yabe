@@ -1,8 +1,26 @@
-<%= form_tag charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Amount: 5.00</span>
-    </label>
-  </article>
+<br>
+<br>
 
-<% end %>
+<div style="left: 500">
+	<div class = "stripe">
+	<%= form_tag charges_path do %>
+	  <article>
+	    <label class="amount">
+	      <span>Amount: <%= "$5.00"%></span>
+	    </label>
+	  </article>
+	<% end %>
+
+	</div>
+
+	<div class = "address">
+		<form>
+			<strong><legend>Shipping Address</legend></strong>
+			<p>Name:<input type="text" name="name"></p>
+			<p>Address:<input type="text" name="address"></p>
+			<p>City:<input type="text" name="city"></p>
+			<p>State:<input type="text" name="state"></p>
+			<p>Zip Code:<input type="text" name="zip"></p>
+		</form>
+	</div>
+</div>

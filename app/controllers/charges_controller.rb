@@ -19,7 +19,7 @@ def create
   end
 
   # Amount in cents
-  @amount = 500
+  @amount = "$5.00"
   Stripe.api_key = ENV["API_KEY"]
   customer = Stripe::Customer.create(
     :email => 'example@stripe.com',
