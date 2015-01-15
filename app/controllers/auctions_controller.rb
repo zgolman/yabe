@@ -1,12 +1,14 @@
 class AuctionsController < ApplicationController
   def index
     @auctions = Auction.all
+    # Create timeleft array of objects to display on index
     @timeleft = []
     if @auctions!=nil
       @auctions.each do |j|
         @timeleft.push({hours:((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)/60/60,
          minutes: (((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)/60%60),
-         seconds: (((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)%60)})
+         seconds: (((j.created_at.to_i) + (j.auction_period/1000) - Time.now.to_i)%60),
+         unix_time: (j.created_at.to_i + (j.auction_period/1000) - Time.now.to_i)})
       end
     end
 
