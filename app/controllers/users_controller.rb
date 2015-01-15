@@ -7,14 +7,6 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
-    # def new
-    #     @user = User.new
-    # end
-
-    def home
-        @user = User.new
-    end
-
     def dashboard
         current_id = current_user[:id]
         @user= User.find_by id: current_id
