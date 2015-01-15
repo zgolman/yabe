@@ -6,6 +6,10 @@ class UsersController < ApplicationController
         @users = User.all
         @user = User.new
     end
+    
+    def home
+        @user = User.new
+    end
 
     def dashboard
         current_id = current_user[:id]
